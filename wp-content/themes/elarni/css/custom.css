@@ -1,0 +1,62 @@
+
+/** Layout Css **/
+
+/** Supertheme Header **/
+.supertheme-header .no-header-menu ul li,
+.supertheme-header .dt-header-menu .dt-primary-nav li
+{
+    border-left: 1px solid #e8e8e8;
+    margin: 0;
+}
+.supertheme-header .no-header-menu ul li.close-nav,
+.supertheme-header .dt-header-menu .dt-primary-nav li.close-nav
+{
+    border-left: none;
+}
+.supertheme-header .no-header-menu ul li a,
+.supertheme-header .dt-header-menu .dt-primary-nav li a
+{
+    padding: 10px 25px;
+}
+
+/** Applanding Header **/
+.applanding-header .dt-header-menu ul.dt-primary-nav > li > a.icon-position-left > .menu-item-icon
+{
+    display: block;
+    font-size: 19px;
+    margin-bottom: 13px;
+    padding-right: 0;
+    text-align: center;
+            transition: all .3s linear; 
+       -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+         -o-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+
+/** Tile Max Header **/
+.tilemax-header .cart-info
+{
+    background: none; 
+    margin: 0;
+}
+.tilemax-header .search-module.simple-header-search.filled.gray #searchform
+{
+    background: none;
+    border: 1px solid #f3f3f3;
+}
+
+
+/** Mini Header **/
+.dt-sc-maaya-header.type2 .dt-simpler-slider
+{
+    float: right;
+    margin-right: 20px; 
+    position: relative;
+    right: 0;
+    top: 4px;
+}
+.dt-sc-maaya-header.type2 .search-module
+{
+    float: right;
+}

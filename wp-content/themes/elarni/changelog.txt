@@ -1,0 +1,84 @@
+*** Elearni WordPress Theme Changelog ***
+
+2021.06.25 - version 2.2
+	* Woocommerce template files update
+
+2021.01.23 - version 2.1
+	* Compatible with wordpress 5.6
+	* Some design issues updated
+	* Updated: All premium plugins
+
+2020.11.30 - version 2.0
+	* Latest jQuery fixes updated
+	* Updated: All premium plugins
+
+2020.08.13 - version 1.9
+	* Compatible with wordpress 5.5
+
+2020.08.05 - version 1.8
+	* Updated: Envato Theme check
+	* Updated: sanitize_text_field added
+	* Updated: All wordpress theme standards
+	* Updated: All premium plugins
+
+2020.07.29 - version 1.7
+	* Updated: Course page responsive issue
+	* Updated: Login page responsive issue
+	* Updated: Font Awesome icons issue
+
+2020.07.23 – version 1.6
+	* Updated: Single Image VC module issue
+
+2020.06.30 - version 1.5
+	* Compatible with wordpress 5.4.2
+	* Updated: All premium plugins
+	* Updated: Font Awesome icons 5 
+	* Updated: Vimeo video playing issue
+	* Updated: Kirki Fonts missing issue
+
+2020.03.11 - version 1.4
+	* Updated: All premium plugins
+	* Updated: Design Fixes
+	* Updated: Visual composer not working when activated LMS addon plugin
+
+2020.02.01 - version 1.3
+	* Compatible with wordpress 5.3.2
+	* Updated: All premium plugins
+	* Updated: All wordpress theme standards
+	* Updated: Privacy and Cookies concept
+
+* Fixed: Privacy Button Issue
+	* Improved: Single product breadcrumb section
+	* Improved: Revisions options added for all custom posts
+
+2019.11.25 - version 1.2
+	* Compatible with wordpress 5.3
+	* Updated: All wordpress theme standards
+	* Updated: All premium plugins
+	* Updated: Revisions added to all custom post types
+	* Updated: Gutenberg editor support for custom post types
+	* Updated: Link for phone number module
+	* Updated: Online documentation link, check readme file
+
+	* Fixed: Customizer logo option
+	* Fixed: Google Analytics issue
+	* Fixed: Mailchimp email client issue
+	* Fixed: Gutenberg check for old wordpress version
+	* Fixed: Edit with Visual Composer for portfolio
+	* Fixed: Header & Footer wpml option
+	* Fixed: Breadcrumb issue in services page
+	* Fixed: Site title color
+	* Fixed: Privacy popup bg color
+	* Fixed: 404 page scrolling issue
+
+	* Improved: Tags taxonomy added for portfolio
+	* Improved: Woocommerce cart module added with custom class option
+
+	* New: Whatsapp Shortcode
+
+2019.03.12 - version 1.1
+	* Dummy Content
+
+
+2019.03.11 - version 1.0
+	* First release!
