@@ -8,11 +8,16 @@
     $nb=mysqli_num_rows($reponse);
     
     if($nb!=0){
+        if($password == 'passer@123'){
+        include("http://localhost/samadoc/changer-mot-de-passe/");
+        }
+        else{
         include ("http://localhost/samadoc/accueil/");
-    }
+        }
+     }
     else{
         include("http://localhost/samadoc/connexion/");
-    }
+     }
 
 
 ?>
