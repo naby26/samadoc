@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+section{
+    margin:50px;
+    border:2px solid ;
+    position:relative;
+   text-align: center;
+}
+.bouton{
+    width: 100%; height:auto;
+    display: flex;
+    justify-content: center;
+}
+
+.blocMenu{
+    display:flex;
+    margin:20px;
+    justify-content: space-evenly;
+
+}
+.blocavatar{
+    padding: 50px;
+    
+    display:flex;
+    flex-direction: column;
+
+}
+.blocavatar input[type="submit"]{
+    background-color: rgb(109, 171, 241);
+}
+
+.blocajout{
+    padding: 80px;
+    display:flex;
+    flex-direction: column;
+
+}
+.blocajout input[type="submit"]{
+    background-color: rgb(238, 106, 30);
+    margin-top: 30px;
+}
+
+
+input[type="submit"]{
+    width:250px; height:60px; text-align: center ;
+}
+input[type="text"]{
+    width:300px; height:50px; text-align: center;margin-bottom: 10px;
+    font-size: xx-large; border-radius: 5px;
+}
+.blocavatar img{
+    border-radius: 50%;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 5px 5px 5px black;
+}
+@media (max-width:928px) {
+
+    .blocMenu{flex-wrap:wrap;}
+    
+}
+label{
+    display: inline;
+}
+span{ padding: 10px 20px; text-shadow:2px 3px 5px  rgb(6, 101, 211); border-radius: 0 10px; border-bottom: 3px solid rgb(5, 209, 245);border-right:3px solid rgb(6, 101, 211);
+}
+</style>
+<body>
+    <section>
+
+       <!-- <div class="bouton">
+         <input type="submit" value="Mon profile">  
+         <input type="submit" value="Gestion de la plateforme"> 
+        </div>-->
+                  
+        <div class="blocMenu">
+            <div class="blocavatar">
+                <img src="IMG_7464 - Copie.jpg" alt="" width="200px" height="auto">
+                <input type="submit" value="Mon profile">
+            </div>
+            <div class="blocajout">
+
+                <label for="prenom"><pre>Prenom   :</pre> </label> <span>Mouhamed Naby</span>
+                <label for="nom"><pre>Nom         :</pre>       </label> <span> Sane</span>
+                <label for="mail"><pre>Email      :</pre>    </label> <span>@gmail.com</span>
+                <label for="licence"><pre>Licence :</pre></label>  <span>Agrotic</span>
+                <label for="niveau"><pre>Niveau   :</pre></label> <span>licence 3</span>
+                
+            </div>
+        </div>
+</section><pre></pre>
+
+</body>
+</html>
