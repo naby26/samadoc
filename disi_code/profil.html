@@ -31,6 +31,7 @@ section{
     
     display:flex;
     flex-direction: column;
+    align-items: center;
 
 }
 .blocavatar input[type="submit"]{
@@ -50,7 +51,7 @@ section{
 
 
 input[type="submit"]{
-    width:250px; height:60px; text-align: center ;
+    width:325px; height:40px; text-align: center ;
 }
 input[type="text"]{
     width:300px; height:50px; text-align: center;margin-bottom: 10px;
@@ -70,8 +71,25 @@ input[type="text"]{
 label{
     display: inline;
 }
-span{ padding: 10px 20px; text-shadow:2px 3px 5px  rgb(6, 101, 211); border-radius: 0 10px; border-bottom: 3px solid rgb(5, 209, 245);border-right:3px solid rgb(6, 101, 211);
+span#info{width: 200px;height: 50px; padding: 10px 20px; text-shadow:2px 3px 5px rgb(6, 101, 211); border-radius: 0 10px; border-bottom: 3px solid rgb(5, 209, 245);border-right:3px solid rgb(6, 101, 211);
 }
+
+#changer_avatar{
+    width:150px; height:40px; text-align: center ;
+}
+#choisir_img{
+    border:1px solid rgb(228, 153, 131);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#choisir_img:hover{
+    background-color: rgb(228, 153, 131);
+    color: white;
+    transition: 0.3s;
+}
+
+
 </style>
 <body>
     <section>
@@ -84,15 +102,19 @@ span{ padding: 10px 20px; text-shadow:2px 3px 5px  rgb(6, 101, 211); border-radi
         <div class="blocMenu">
             <div class="blocavatar">
                 <img src="IMG_7464 - Copie.jpg" alt="" width="200px" height="auto">
-                <input type="submit" value="Mon profile">
+                <p><input type="file" name="avatar_profil" id="avatar_profil" style="display: none;">
+                    <label for="avatar_profil" id="choisir_img">Choisir votre image</label>
+                <input type="submit" value="changer d'avatar" id="changer_avatar">
+            </p>
+                <a href="http://localhost/samadoc/changer-mot-de-passe/"><input type="submit" value="Changer de mot de passe"></a>
             </div>
             <div class="blocajout">
 
-                <label for="prenom"><pre>Prenom   :</pre> </label> <span>Mouhamed Naby</span>
-                <label for="nom"><pre>Nom         :</pre>       </label> <span> Sane</span>
-                <label for="mail"><pre>Email      :</pre>    </label> <span>@gmail.com</span>
-                <label for="licence"><pre>Licence :</pre></label>  <span>Agrotic</span>
-                <label for="niveau"><pre>Niveau   :</pre></label> <span>licence 3</span>
+                <label for="prenom"> <pre>Prenom :</pre</label> <span id="info"> idMouhamed Naby</span>
+                <label for="nom">    <pre>Nom    :</pre></label> <span id="info"> Sane</span>
+                <label for="mail">   <pre>Email  :</pre></label> <span id="info">@gmail.com</span>
+                <label for="licence"><pre>Licence:</pre></label>  <span id="info">Agrotic</span>
+                <label for="niveau"> <pre>Niveau :</pre></label> <span id="info">licence 3</span>
                 
             </div>
         </div>
