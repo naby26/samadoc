@@ -154,7 +154,7 @@ footer details{
     </div>       
     
     <div class="bloc_avatar">
-        <img src="http://localhost/samadoc/disi_code/sd_avatar_user/<?php echo $tab1['photo']; ?>    <?php echo $tab1['photo'] ?>" alt="" >
+        <img src="http://localhost/samadoc/disi_code/sd_avatar_user/<?php echo $tab1['photo']; ?>" alt="" >
        <p> <?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?> </p>
     </div>
     
