@@ -1,4 +1,5 @@
 <?php
+session_start();
 $passwordactuel =$_POST['password'];
 $newpassword = $_POST['newpassword'];
 $confpassword = $_POST['confnewpassword'];
@@ -10,6 +11,8 @@ $base = mysqli_connect ("localhost", "root", "","samadoc");
 $reponse = mysqli_query($base,"SELECT * FROM sd_etudiant WHERE password='$passwordactuel' and username='N00473E20181'");
 
 $nb=mysqli_num_rows($reponse);
+
+
 
 if($nb!=0){
 

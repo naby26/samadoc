@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Theme Functions
  *
@@ -1035,6 +1036,7 @@ add_shortcode('filtre_niveau_etudiant','filtre_niveau_etudiant');
 
 function acceuil(){
 
+
 	$con = mysqli_connect("localhost","root","","samadoc");
 	$requete1 = mysqli_query($con,"SELECT * FROM sd_document WHERE ufr='SFI'");
 	$requete2 = mysqli_query($con,"SELECT * FROM sd_document WHERE ufr='SEAPAN'");
@@ -1045,6 +1047,8 @@ function acceuil(){
 	$table2 = mysqli_num_rows($requete2);
 	$table3 = mysqli_num_rows($requete3);
 	$table4 = mysqli_num_rows($requete4);
+
+	echo $_SESSION['username'];
 	?>
 	<style>
 		.stat{
