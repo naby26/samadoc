@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if(!is_page( 'connexion' ) &&  !$_SESSION['username']  ){
+    wp_redirect( home_url( 'connexion' ));
+    exit;
+}
+
+?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

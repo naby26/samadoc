@@ -20,14 +20,14 @@
 
 
         if($password == 'passer@123'){
-        include("http://localhost/samadoc/changer-mot-de-passe/");
+        header("location: http://localhost/samadoc/changer-mot-de-passe/");
         }
         else{
-        include ("http://localhost/samadoc/accueil/");
+        header("location: http://localhost/samadoc/accueil/");
         }
      }
     else{
-        include("http://localhost/samadoc/connexion/");
+        header("location: http://localhost/samadoc/connexion/");
      }
 
 

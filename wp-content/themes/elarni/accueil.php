@@ -150,7 +150,7 @@ get_header();
                     echo $_SESSION['firstname']."<br>";
                     echo $_SESSION['lastname']."<br>";
                     ?>
-                    <a href="http://localhost/samadoc2/disi_code/deconnexion.php">Se Déconnecter</a>
+                    <a href="http://localhost/samadoc/disi_code/deconnexion.php">Se Déconnecter</a>
                 </p>
         </div>
         <div class="container_accueil">
@@ -199,14 +199,7 @@ get_header();
 	
 	<section class="presentation">
 		<h1>Présentation</h1>
-		<p>
-			<?php 
-				echo $_SESSION['username']."<br>";
-				echo $_SESSION['firstname']."<br>";
-				echo $_SESSION['lastname']."<br>";
-				echo $_SESSION['email']."<br>";
-			?>
-		</p>
+
 		<p class="princi_text">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam quam reprehenderit culpa iusto molestias quia ea provident quo, obcaecati rem vitae perspiciatis repellendus, voluptates aperiam. Itaque, esse inventore? Dolorem cum, error sed officiis minima labore quae iure consequuntur quam, a id dolorum ullam minus, quo soluta autem rem nobis distinctio asperiores numquam deserunt maxime temporibus animi. Corrupti voluptatem, unde similique doloremque odio consectetur officiis adipisci, commodi illum expedita modi enim sunt cupiditate, praesentium hic. Laborum aperiam illo voluptatibus odit sit quam nam nulla dolores impedit in esse eveniet adipisci quia eius, recusandae obcaecati id reprehenderit voluptatum quidem dignissimos deleniti fuga dolor at! Perferendis eius vero necessitatibus cumque pariatur iure suscipit ducimus distinctio. Repellat voluptates reiciendis perferendis officia iure. Rerum eaque nihil magnam reprehenderit totam. Dolores sint deserunt unde iusto cupiditate qui aut illo, necessitatibus autem tenetur quam ullam id similique, velit natus minus! Hic dignissimos animi ipsam minus dolorum? Tempora, laboriosam debitis ullam distinctio, consequatur quasi ab deserunt mollitia ad, commodi assumenda dolore accusantium! Cupiditate, ducimus expedita doloribus corporis alias quas odio natus rerum fugiat, facere dolorum perspiciatis magnam eaque ab ad unde? Consectetur, ducimus. Voluptatem ipsum eligendi deserunt numquam sunt sequi, impedit quisquam exercitationem aperiam esse. Accusantium nisi repellat eligendi? Officia aliquid voluptates suscipit iusto ducimus! Harum laudantium debitis, voluptate ab repudiandae officiis assumenda beatae deserunt reprehenderit dolorem similique non sapiente nulla molestias ratione! Libero nisi ducimus praesentium ratione ex, sequi tempore. Possimus, saepe suscipit repellendus dolores magnam similique dolore quaerat? Veniam quis dolore alias eligendi harum recusandae aspernatur. Numquam ipsum velit magni!
 		</p>

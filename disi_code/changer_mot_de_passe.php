@@ -23,14 +23,14 @@ if($newpassword==$confpassword){
 	// lancement de la requête
 	$sql = "UPDATE sd_etudiant SET password ='$newpassword' WHERE username='N00473E20181'";
 	$reponse2=mysqli_query($base,$sql);
-      include("http://localhost/samadoc/accueil/");
+      header("location: http://localhost/samadoc/accueil/");
         }
         else{
-           include("http://localhost/samadoc/changer-mot-de-passe/");
+           header("location: http://localhost/samadoc/changer-mot-de-passe/");
         }
 	}
 	else{
-		include("http://localhost/samadoc/changer-mot-de-passe/");
+		header("location: http://localhost/samadoc/changer-mot-de-passe/");
 	}
 	// on exécute la requête (mysql_query) et on affiche un message au cas où la requête ne se passait pas bien (or die)
 	//mysqli_query($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());

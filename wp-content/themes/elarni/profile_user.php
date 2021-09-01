@@ -159,7 +159,7 @@ footer details{
     </div>
     
     <div class="changer_password">
-    <a href="#">Changer mot de passe</a>
+    <a href="http://localhost/samadoc/changer-mot-de-passe/">Changer mot de passe</a>
     </div>
 
 
@@ -172,18 +172,39 @@ footer details{
 
 //$con = mysqli_connect("localhost","root","","samadoc");
 if(!empty($_FILES)){
+
     $image_name = $_FILES['image']['name'];
-    $format_possible = array('png','jpg','ico','jpeg');
+    $format_possible = array('.png','.jpg','.ico','.jpeg');
     $format = strrchr($image_name,".");
 //$image_size = $_FILES['fichier']['size'];
     $image_path = $_FILES['image']['tmp_name'];
     
     $gate = 'disi_code/sd_avatar_user/'.$image_name;
+
     if(move_uploaded_file($image_path,$gate)){
         $photo = $_SESSION['username'].$format;
+        $requete_img = mysqli_query($con,"UPDATE sd_etudiant SET photo ='$photo'");
+
+        
+        $repertoire = 'disi_code/sd_avatar_user';
+        $acces_repertoire = opendir($repertoire);
+             while($images = readdir($acces_repertoire)){
+                  if($images == $_SESSION['username'].'png') {
+                      unlink('disi_code/sd_avatar_user/'.$images);
+                  }
+                  elseif($images ==$_SESSION['username'].'jpg'){
+                      unlink('disi_code/sd_avatar_user/'.$images);
+                  }
+                  elseif($images ==$_SESSION['username'].'ico'){
+                      unlink('disi_code/sd_avatar_user/'.$images);
+                  }
+             }
+             closedir( $acces_repertoire);
+    
+             
         $renommage = rename('disi_code/sd_avatar_user/'.$image_name,'disi_code/sd_avatar_user/'.$photo);
   //      echo "profile envoyer";
-    $requete_img = mysqli_query($con,"UPDATE sd_tudiant SET photo='$photo'");
+       
      }
 
 }
