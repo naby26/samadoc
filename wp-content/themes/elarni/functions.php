@@ -1154,3 +1154,104 @@ function acceuil(){
 }
 
 add_shortcode('acceuil','acceuil');
+
+
+// Résultat de recherches et affichages
+
+function resultat_recherche(){
+	// session_start();
+
+	$recherche=$_GET['recherche'];
+
+
+ $recherche = htmlspecialchars($recherche); //pour sécuriser le formulaire contre les intrusions html
+ $recherche = trim($recherche); //pour supprimer les espaces dans la requête de l'internaute
+ $recherche = strip_tags($recherche); //pour supprimer les balises html dans la requête
+
+
+$bdd = mysqli_connect("localhost", "root","", "samadoc");
+    $reponse = mysqli_query($bdd,"SELECT * FROM sd_document WHERE nom LIKE '%$recherche%' ");
+
+    $nb=mysqli_num_rows($reponse);
+    echo "le nombre de résultat est ".$nb; ?> <br> <?php
+
+$tab_pdf = array('.pdf','.PDF');
+	$tab_word = array('.docx','.DOCX');
+	$tab_excel = array('.csv','.xlsx','.xlsm');
+	$tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
+	$icone="";
+
+	while($table = mysqli_fetch_array($reponse)){
+
+		$format = strrchr($table['nom'],'.');
+		if(in_array($format,$tab_pdf)){
+			$icone = "http://localhost/samadoc/wp-content/uploads/2021/08/pdf.png";
+		}
+		if(in_array($format,$tab_word)){
+			$icone = "http://localhost/samadoc/wp-content/uploads/2021/08/doc.png";
+		}
+		if(in_array($format,$tab_excel)){
+			$icone = "http://localhost/samadoc/wp-content/uploads/2021/08/xls.png";
+		}
+		if(in_array($format,$tab_ppt)){
+			$icone = "http://localhost/samadoc/wp-content/uploads/2021/08/ppt.png";
+		}
+	?>
+	<style>
+		.div_doc{
+	background-color:rgba(0,0,0,0,1);
+	display:inline-flex;
+	justify-content:space-evenly;
+	flex-wrap:nowrap;
+	border:outset 3px;
+	margin-bottom: 10px;
+	padding:10px 20px 10px 0px;
+	}
+      img#icone_doc:hover{
+		  transform: scale(1.1);
+	  }    
+
+	.div_label1{
+		overflow-wrap: break-word;
+		width: 150px;height:188px;
+	}
+    .image_bloc{
+        width:200px;
+        height:auto;
+    } 
+	
+	</style>
+
+
+	
+
+	<div class="div_doc">
+			<div class="div_img">
+			<a href="http://localhost/samadoc/disi_code/files/<?php echo $table['nom']; ?>" >
+				<img src="<?php echo $icone; ?>" alt="fichier PDF" class="image_bloc">
+			</a>
+			</div>
+			<div class="div_label">
+				<label >UFR: </label> <?php echo $table['ufr'];?><br>
+				<label >Nature: </label> <?php echo $table['nature'];?><br>
+				<label >Module: </label> <?php echo $table['module'];?><br>
+				<label >Niveau: </label> <?php echo $table['niveau'];?><br>
+				<label >Année: </label> <?php echo $table['annee'];?><br>
+			</div>
+			<div class="div_input">
+			<a download="<?php echo $table['nom']; ?>" href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" ><input type="submit" value="Télécharger"></a>
+			
+			</div>
+
+
+	</div>
+
+	<?php
+	
+	}
+
+	mysqli_close($bdd);
+
+}
+add_shortcode('resultat_recherche','resultat_recherche');
+
