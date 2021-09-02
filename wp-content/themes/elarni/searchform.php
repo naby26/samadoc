@@ -5,9 +5,9 @@
 
 <form method="GET" id="searchform" action="http://localhost/samadoc/resultat_recherche/">
     <input id="s" name="recherche" type="text" 
-         	value="<?php echo esc_attr( $search_text );?>" class="text_input"
+         	placeholder=" Rechercher un document" class="text_input"
 		    onblur="if(this.value==''){this.value='<?php echo esc_attr($search_text);?>';}"
-            onfocus="if(this.value =='<?php echo esc_attr($search_text);?>') {this.value=''; }" />
+            onfocus="if(this.value =='<?php echo esc_attr($search_text);?>') {this.value=''; }"/>
     <a href="http://localhost/samadoc/resultat_recherche/" class="dt-search-icon"> <span class="fas fa-times"> </span> </a>
 	<input name="submit" type="submit"  value="<?php esc_attr_e('Go','elearni');?>" />
 </form><!-- **Searchform - End** -->

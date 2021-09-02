@@ -79,20 +79,7 @@ get_header();
 				size: auto;
 			}
 		}
-		.bouton_ajout{
-			height: 50px;
-			width: 50px;
-			background-image: linear-gradient(to right, #00eda4, #6a7df1);
-			border-radius: 50%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position:fixed;
-			left: 20px;
-			bottom: 20px;
-			cursor: pointer;
-			transition: 0.4s all;
-		}
+
 		.profil_info{
 			position: fixed;
 			bottom: 65px;
@@ -100,13 +87,7 @@ get_header();
 			background-color: #6a7df1;
 			display: none;
 		}
-		.icone_ajout{
-			width: 30px;
-		}
-		.bouton_ajout:hover{
-			transform: scale(1.5);
-			transition: 0.4s all;
-		}
+
 		.profil_info:hover{
 			display: inline-block;
 		}
@@ -170,9 +151,7 @@ get_header();
 
     mysqli_close($con);
 	?>
-	<a href="http://localhost/samadoc/ajout-de-documents/" class="bouton_ajout">
-		<img src="http://localhost/samadoc/wp-content/uploads/2021/08/profil.png" class="icone_ajout" title="Ajouter un Document">
-	</a>
+
 	<div class="profil_info">
 		<?php
 		echo $_SESSION['firstname']."<br>".$_SESSION['lastname'];

@@ -137,11 +137,38 @@ footer details{
        }
 
 
+                   .icone_ajout{
+                        width: 30px;
+                    }
+                    .bouton_ajout:hover{
+                        transform: scale(3.5);
+                        transition: 0.4s all;
+                    }
+                    .bouton_ajout{
+                        /* height: 50px;
+                        width: 50px; */
+                        /* background-image: linear-gradient(to right, #00eda4, #6a7df1); */
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position:fixed;
+                        right: 90px;
+                        bottom: 90px;
+                        cursor: pointer;
+                        transition: 0.4s all;
+                        transform: scale(2.5);
+                        z-index: 999;
+                    }
+
+
 </style>
 
 
  <!---   *** CODE POUR L'AFFICHAGE DU BOX PROFILE (AVATAR ET SUPPRESSION)  ***   --> 
-
+ <a href="http://localhost/samadoc/ajout-de-documents/" class="bouton_ajout">
+		<img src="https://img.icons8.com/ios-glyphs/480/000000/add--v2.png" class="icone_ajout" title="Ajouter un Document">
+	</a>
 <section class="user_profile" >
 <div class="bloc_profile">
 

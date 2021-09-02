@@ -5,12 +5,39 @@ Template name: Document
 get_header();
 ?>
 <style>
+
+
+                    .icone_ajout{
+                        width: 30px;
+                    }
+                    .bouton_ajout:hover{
+                        transform: scale(3.5);
+                        transition: 0.4s all;
+                    }
+                    .bouton_ajout{
+                        /* height: 50px;
+                        width: 50px; */
+                        /* background-image: linear-gradient(to right, #00eda4, #6a7df1); */
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position:fixed;
+                        right: 90px;
+                        bottom: 90px;
+                        cursor: pointer;
+                        transition: 0.4s all;
+                        transform: scale(2.5);
+                        z-index: 999;
+                    }
                     .div_doc{
                 display: inline-flex;
                 justify-content:space-evenly;
                 flex-wrap:nowrap;
                 border:outset 2px;
                 margin-bottom: 15px;
+                border-radius: 20px;
+                box-shadow: 2px 2px 3px black;
             }
                     .div_input{
                         margin-left: 25px;
@@ -39,7 +66,7 @@ get_header();
                     .contenu_document{
                         display: grid;
                         grid-template-columns: auto auto;
-                        justify-content: center;
+                        justify-content: space-around;
                     }
                     .sidebar_info_document p{
                         text-align: center;
@@ -49,7 +76,7 @@ get_header();
                     .sidebar_document{
                         padding: 25px;
                         border-right: 2px solid;
-                        background-color: grey;
+                        background-color:  rgb(147, 201, 248);
                     }
                     .details_sidebar{
                         font-size: large;
@@ -57,6 +84,8 @@ get_header();
                     .details_sidebar p{
                         padding-left: 30px;
                     }
+
+
                     @media(max-width:800px){
                         .contenu_document{
                             display: grid;
@@ -79,8 +108,6 @@ get_header();
                    
                 </style>
 
-
-
 <div class="body_document">
     <div class="nav_document">
         <!-- Navigateur -->            
@@ -99,6 +126,9 @@ get_header();
             </div>
         </header><!-- **Header - End ** -->
     </div>
+    <a href="http://localhost/samadoc/ajout-de-documents/" class="bouton_ajout">
+		<img src="https://img.icons8.com/ios-glyphs/480/000000/add--v2.png" class="icone_ajout" title="Ajouter un Document">
+	</a>
     <div class="corps_document">
         <div class="sidebar_document">
             <div class="sidebar_menu">
@@ -215,9 +245,6 @@ get_header();
                         
                         <div class="div_doc">
                                 <div class="div_img">
-                                    <p>
-                                        <?php echo $_SESSION['username']; ?>
-                                    </p>
                                 <a href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" >
                                     <img src="<?php echo $icone; ?>" alt="fichier PDF" class="image_bloc" title="<?php echo $table['description'];?>" width="200px" height="auto" id="img_doc">
                                 </a>
@@ -242,6 +269,7 @@ get_header();
       
 
     </div>
+
     <div class="footer_document">
         <?php get_footer();?>
     </div>
