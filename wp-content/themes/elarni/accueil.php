@@ -15,7 +15,6 @@ get_header();
     }
     .corps_accueil{
         display: grid;
-        grid-template-columns: 300px auto;
     }
     .stat{
 			display: inline-flex;
@@ -25,7 +24,7 @@ get_header();
 			border: 1px inset rgb(6,6,48);
 			gap: 0px 10px;
 			margin-top: 50px;
-			margin-left: 80px;
+			margin-left: 120px;
 		}
 		.stat_ufr{
 			padding: 30px;
@@ -123,7 +122,7 @@ get_header();
         </header><!-- **Header - End ** -->
     </div>
     <div class="corps_accueil">
-        <div class="sidebar_accueil">
+        <!-- <div class="sidebar_accueil">
                 <p>
                     <img src="http://localhost/samadoc/wp-content/uploads/2021/08/profil.png" alt="Photo Profil" class="profil_accueil" width="75px" height="75px">
                     <?php
@@ -133,7 +132,7 @@ get_header();
                     ?>
                     <a href="http://localhost/samadoc/disi_code/deconnexion.php">Se Déconnecter</a>
                 </p>
-        </div>
+        </div> -->
         <div class="container_accueil">
             <!-- Partie contenu d'Accueil -->
 
