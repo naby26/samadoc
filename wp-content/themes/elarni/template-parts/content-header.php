@@ -33,7 +33,7 @@
                     }
                 } else { ?>
                     <a href="<?php echo esc_url( home_url('/') ); ?>" rel="home">
-                        <img src="<?php echo ELEARNI_THEME_URI.'/images/logo.png'; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>"/>
+                         <img src=" http://localhost/samadoc/disi_code/logo/samado.png" <?php //echo ELEARNI_THEME_URI.'/images/logo.png'; ?>    alt="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>"/>  
                     </a><?php
                 } ?>
             </div>    
