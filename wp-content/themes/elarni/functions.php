@@ -1198,15 +1198,15 @@ $tab_pdf = array('.pdf','.PDF');
 		}
 	?>
 	<style>
-		.div_doc{
-	background-color:rgba(0,0,0,0,1);
-	display:inline-flex;
-	justify-content:space-evenly;
-	flex-wrap:nowrap;
-	border:outset 3px;
-	margin-bottom: 10px;
-	padding:10px 20px 10px 0px;
-	}
+                    .div_doc{
+                display: inline-flex;
+                justify-content:space-evenly;
+                flex-wrap:nowrap;
+                border:outset 2px;
+                margin-bottom: 15px;
+                border-radius: 20px;
+                box-shadow: 2px 2px 3px black;
+            }
       img#icone_doc:hover{
 		  transform: scale(1.1);
 	  }    
@@ -1227,7 +1227,7 @@ $tab_pdf = array('.pdf','.PDF');
 
 	<div class="div_doc">
 			<div class="div_img">
-			<a href="http://localhost/samadoc/disi_code/files/<?php echo $table['nom']; ?>" >
+			<a href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" >
 				<img src="<?php echo $icone; ?>" alt="fichier PDF" class="image_bloc">
 			</a>
 			</div>

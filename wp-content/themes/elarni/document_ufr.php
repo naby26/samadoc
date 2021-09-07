@@ -1,13 +1,12 @@
 <?php
 /*
-Template name: Document
+Template name: Document_ufr
 */
 get_header();
 ?>
 <style>
-
-
-                    .icone_ajout{
+                
+                .icone_ajout{
                         width: 30px;
                     }
                     .bouton_ajout:hover{
@@ -27,6 +26,7 @@ get_header();
                         transform: scale(2.5);
                         z-index: 999;
                     }
+
                     .div_doc{
                 display: inline-flex;
                 justify-content:space-evenly;
@@ -105,6 +105,8 @@ get_header();
                    
                 </style>
 
+
+
 <div class="body_document">
     <div class="nav_document">
         <!-- Navigateur -->            
@@ -129,7 +131,7 @@ get_header();
     <div class="corps_document">
         <div class="sidebar_document">
             <div class="sidebar_menu">
-                    <details class="details_sidebar">
+            <details class="details_sidebar">
                         <summary>Dept MI</summary>
                         <p>
                             <a href="http://localhost/samadoc/mpi/">MPI</a><br>
@@ -186,8 +188,8 @@ get_header();
                     <details class="details_sidebar">
                         <summary>Dept THRG</summary>
                         <p>
-                            <a href="#">NSA</a><br>
-                            <a href="#">NHD</a>
+                            <a href="http://localhost/samadoc/hrg/">HRG</a><br>
+                            <a href="http://localhost/samadoc/ptmc/">PTMC</a>
                         </p>
                     </details>
                     <details class="details_sidebar">
@@ -206,23 +208,29 @@ get_header();
                         </p>
                     </details>
                     <details class="details_sidebar">
-                        <summary>Dept MI</summary>
+                        <summary>Dept </summary>
                     </details>
             </div>
             
 
         </div>
         <div class="contenu_document">
-        <?php  
+        <?php
+                    $page = get_the_title();
+                    $ufr_page =strrchr($page,' ');
+                    // $ufr_page=strtolower($ufr_page);
+                    $ufr_page=trim($ufr_page);
                     $con = mysqli_connect("localhost","root","","samadoc");
-                    $requete = mysqli_query($con,"SELECT * FROM sd_document");
+                    $requete = mysqli_query($con,"SELECT * FROM sd_document  WHERE ufr='$ufr_page'");
+                    $nbr_doc = mysqli_num_rows($requete);
+                    mysqli_close($con);
 
                     $tab_pdf = array('.pdf','.PDF');
                     $tab_word = array('.docx','.DOCX');
                     $tab_excel = array('.csv','.xlsx','.xlsm');
                     $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
                     $icone="";
-
+                    if($nbr_doc !==0){
                     while($table = mysqli_fetch_array($requete)){
 
                         $format = strrchr($table['nom'],'.');
@@ -247,7 +255,7 @@ get_header();
                                 </a>
                                 </div>
                                 <div class="div_label">
-                                    <label >Licence: </label> <?php echo $table['licence'];?><br>
+                                    <label >UFR: </label> <?php echo $table['ufr'];?><br>
                                     <label >Nature: </label> <?php echo $table['nature'];?><br>
                                     <label >Module: </label> <?php echo $table['module'];?><br>
                                     <label >Niveau: </label> <?php echo $table['niveau'];?><br>
@@ -260,13 +268,15 @@ get_header();
 
                         <?php
                         
-                        }
-                        mysqli_close($con);?>
+                        }}else{?>
+                                <label>Cette UFR ne comporte aucun document enregistrer. </label><br>
+                                <label>Veuillez en <a href="http://localhost/samadoc/ajout-de-documents/">ajouter un !</a></label>
+                        <?php }
+                        ?>
         </div>
       
 
     </div>
-
     <div class="footer_document">
         <?php get_footer();?>
     </div>
