@@ -73,7 +73,7 @@
     <div class="footer">
         <div class="logo_footer">
             <div class="img">
-            <a href="https://www.ussein.sn" target="_blank"><img src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO.png" alt="Logo Ussein" class="img_logo" width="200px" height="108px"></a>
+            <a href="https://www.ussein.sn" target="_blank"><img src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN.png" alt="Logo Ussein" class="img_logo" width="200px" height="108px"></a>
             </div>
             <div class="lien_footer">
             <h1>Liens Utiles</h1>
