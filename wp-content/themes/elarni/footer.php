@@ -8,17 +8,7 @@
 
         <!-- **Footer** -->
         <footer id="footer">
-            <div class="container">
-            <?php
-                /**
-                 * elearni_footer hook.
-                 * 
-                 * @hooked elearni_vc_footer_template - 10
-                 *
-                 */
-                do_action( 'elearni_footer' );
-            ?>
-             <style>
+        <style>
         .footer{
             position: absolute;
             width: 100%;
@@ -87,6 +77,16 @@
             &copy; 2021 DISI, Université du Sine Saloum El-Hadj Ibrahima NIASS - Tous droits réservées
         </div>
     </div>
+            <div class="container">
+            <?php
+                /**
+                 * elearni_footer hook.
+                 * 
+                 * @hooked elearni_vc_footer_template - 10
+                 *
+                 */
+                do_action( 'elearni_footer' );
+            ?>
             </div>
         </footer><!-- **Footer - End** -->
 
