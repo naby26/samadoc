@@ -179,31 +179,33 @@ get_header();
 		<h1>Présentation</h1>
 
 		<p class="princi_text">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam quam reprehenderit culpa iusto molestias quia ea provident quo, obcaecati rem vitae perspiciatis repellendus, voluptates aperiam. Itaque, esse inventore? Dolorem cum, error sed officiis minima labore quae iure consequuntur quam, a id dolorum ullam minus, quo soluta autem rem nobis distinctio asperiores numquam deserunt maxime temporibus animi. Corrupti voluptatem, unde similique doloremque odio consectetur officiis adipisci, commodi illum expedita modi enim sunt cupiditate, praesentium hic. Laborum aperiam illo voluptatibus odit sit quam nam nulla dolores impedit in esse eveniet adipisci quia eius, recusandae obcaecati id reprehenderit voluptatum quidem dignissimos deleniti fuga dolor at! Perferendis eius vero necessitatibus cumque pariatur iure suscipit ducimus distinctio. Repellat voluptates reiciendis perferendis officia iure. Rerum eaque nihil magnam reprehenderit totam. Dolores sint deserunt unde iusto cupiditate qui aut illo, necessitatibus autem tenetur quam ullam id similique, velit natus minus! Hic dignissimos animi ipsam minus dolorum? Tempora, laboriosam debitis ullam distinctio, consequatur quasi ab deserunt mollitia ad, commodi assumenda dolore accusantium! Cupiditate, ducimus expedita doloribus corporis alias quas odio natus rerum fugiat, facere dolorum perspiciatis magnam eaque ab ad unde? Consectetur, ducimus. Voluptatem ipsum eligendi deserunt numquam sunt sequi, impedit quisquam exercitationem aperiam esse. Accusantium nisi repellat eligendi? Officia aliquid voluptates suscipit iusto ducimus! Harum laudantium debitis, voluptate ab repudiandae officiis assumenda beatae deserunt reprehenderit dolorem similique non sapiente nulla molestias ratione! Libero nisi ducimus praesentium ratione ex, sequi tempore. Possimus, saepe suscipit repellendus dolores magnam similique dolore quaerat? Veniam quis dolore alias eligendi harum recusandae aspernatur. Numquam ipsum velit magni!
-		</p>
+		Les étudiants de la première promotion de l’USSEIN avaient des difficultés de se documenter sur les cours, examen et devoir de leurs spécialités, c’est dans ce sillage qu’ils ont eu l’idée de réaliser un projet intitulé Samadoc.
+Samadoc est une plateforme web conçue par des jeunes étudiants(es) stagiaires de la DISI(Direction Informatique du Système d’Information) de l’université du Sine Saloum d’EL-HADJI IBRAHIMA NIASS DE KAOLACK, elle est accessible pour tous les étudiants de l’USSEIN. L’objectif de cette plateforme est de créer un univers d’échange et de partage de document pour les étudiants, ces derniers n’auront  plus besoin de photocopier  parce que tous leurs documents seront sous forme électronique plus facile à garder que les documents sur papier. L’étudiant peut ajouter, visualiser ou télécharger des documents mais aussi il a le droit de supprimer les documents qu’il a ajouté. Les nouveaux orientés n’auront pas de surprises lors des premières évaluations grâce à la plateforme ils verront les examens et devoirs des années précédentes .Tout étudiant qui le souhaite peux enrichir ses connaissances parce qu’il a accès  aux autres documents des autres licences.
+              </p>
 		<div class="contain_img_presentation">
 			<div class="img_presentation">
-				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/default1.png" alt="Mon Logo" width="300px" height="auto">
+				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/UFR SAEPAN.png" alt="Mon Logo" width="500px" height="auto">
 				<p class="description_img">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aspernatur consectetur veritatis, sunt vero fugiat non necessitatibus distinctio, assumenda eveniet eos nobis perferendis eaque recusandae.
-				</p>
+				UFR SCIENCES AGRONOMIQUES, ELEVAGE, PECHE-AQUACULTURE ET NUTRITION est composée de quatre départements dont Département Agronomie et Production Végétale qui contient 6licences, Département Sciences et Techniques d’Elevage qui contient 2licences,  Département Gestion des Ressources Halieutiques, Pêche et Aquaculture qui contient 2licences  et Département Nutrition Alimentation qui contient 2licences.
+				</P>
+
 			</div>
 			<div class="img_presentation">
-				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/default1.png" alt="Mon Logo" width="300px" height="auto">
+				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/UFR SFI.png" alt="Mon Logo" width="500px" height="auto">
 				<p class="description_img">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aspernatur consectetur veritatis, sunt vero fugiat non necessitatibus distinctio, assumenda eveniet eos nobis perferendis eaque recusandae.
-				</p>
+				UFR SCIENCES FONDAMENTALES ET DE L’INGENIEUR est composée de trois départements dont Département Mathématiques, Physiques et Informatique qui contient 2licences, Département Hydraulique, Génie Rural, Machinisme et Energies Renouvelables qui contient 3licences et Département Sciences et Technologies Alimentaires qui contient 2licences.
+				</P>
 			</div>
 			<div class="img_presentation">
-				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/default1.png" alt="Mon Logo" width="300px" height="auto">
+				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/UFR SEGCSJP.png" alt="Mon Logo" width="500px" height="auto">
 				<p class="description_img">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aspernatur consectetur veritatis, sunt vero fugiat non necessitatibus distinctio, assumenda eveniet eos nobis perferendis eaque recusandae.
-				</p>
+				UFR SCIENCES ECONOMIQUES-JURIDIQUES ET POLITIQUES est composée de trois départements dont Département Tourisme, Hôtellerie, Restauration et Gastronomie qui contient 2licences, Département Sciences Economiques de Gestion et Commerce qui contient 3licences et Département Science Juridique et Politique qui contient 2licences.
+			</p>
 			</div>
 			<div class="img_presentation">
-				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/default1.png" alt="Mon Logo" width="300px" height="auto">
+				<img src="http://localhost/samadoc/wp-content/uploads/2021/08/UFR SSE.png" alt="Mon Logo" width="500px" height="auto">
 				<p class="description_img">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, aspernatur consectetur veritatis, sunt vero fugiat non necessitatibus distinctio, assumenda eveniet eos nobis perferendis eaque recusandae.
+				UFR SCIENCES SOCIALES ET ENVIRONNEMENTALES est composée de deux départements dont Département Science Sociale qui contient 4licences, Département Environnement, Biodiversité et Développement Durable qui contient 4licences.
 				</p>
 			</div>
 		</div>
