@@ -231,7 +231,7 @@ get_header();
 
                     $licence_page = get_the_title();
                     $con = mysqli_connect("localhost","root","","samadoc");
-                    $query = "SELECT * FROM sd_document LIMIT $start_from, $per_page_record WHERE licence='$licence_page'";     
+                    $query = "SELECT * FROM sd_document WHERE licence='$licence_page' LIMIT $start_from, $per_page_record";     
                     $rs_result = mysqli_query ($con, $query);
                     $nbr_doc = mysqli_num_rows($rs_result);
                     mysqli_close($con);

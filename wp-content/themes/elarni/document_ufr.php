@@ -232,7 +232,7 @@ get_header();
                     // $ufr_page=strtolower($ufr_page);
                     $ufr_page=trim($ufr_page);
                     $con = mysqli_connect("localhost","root","","samadoc");
-                    $query = "SELECT * FROM sd_document LIMIT $start_from, $per_page_record WHERE ufr='$ufr_page'";     
+                    $query = "SELECT * FROM sd_document  WHERE ufr='$ufr_page' LIMIT $start_from, $per_page_record";     
                     $rs_result = mysqli_query ($con, $query);
                     $nbr_doc = mysqli_num_rows($rs_result);
                     mysqli_close($con);

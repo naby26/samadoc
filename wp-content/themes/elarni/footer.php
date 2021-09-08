@@ -12,13 +12,12 @@
         .footer{
             position: absolute;
             width: 100%;
-            background-color: black;            
+            background-color: #01796F;            
             color: white;
             font-weight: normal;
             display: grid;
             grid-template-rows: auto auto;
-            margin-top: 1%;
-            border-radius: 30px 30px 0px 0px;
+            margin-top: 2%;
             box-shadow: -0px -10px 30px rgba(0,0,0,0.1);
         }
         .logo_footer{
@@ -29,7 +28,7 @@
         .logo_footer img{
             border-radius: 0%;
             padding-top: 3%;
-            transform: scale(1.5);
+            transform: scale(1.2);
             margin-left: 50px;
             justify-self: center;
         }
@@ -37,7 +36,7 @@
             margin-left:2%;
         }
         .footer hr{
-            width: 95%;
+            width: 100%;
         }
         .lien_footer  h1{
             text-align: center;
@@ -63,12 +62,12 @@
     <div class="footer">
         <div class="logo_footer">
             <div class="img">
-            <a href="https://www.ussein.sn" target="_blank"><img src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN.png" alt="Logo Ussein" class="img_logo" width="200px" height="108px"></a>
+            <a href="https://www.ussein.sn" target="_blank"><img src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO.png" alt="Logo Ussein" class="img_logo" width="200px" height="108px"></a>
             </div>
             <div class="lien_footer">
             <h1>Liens Utiles</h1>
             <a href="https://www.ussein.sn" target="_blank">Université Sine-Saloum El-hadji Ibrahima Niass</a>
-            <a href="https://www.ussein.uvs.sn" target="_blank">Plateforme de cours en Ligne USSEIN</a>     
+            <a href="https://ussein.uvs.sn" target="_blank">Plateforme de cours en Ligne USSEIN</a>     
         </div>
             
         </div>

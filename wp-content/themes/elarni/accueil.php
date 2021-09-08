@@ -56,6 +56,7 @@ get_header();
 			margin: 2px;
 			margin-top: 25px;
 			transition: 0.5s;
+			width: 25%;
 			background-color: rgba(255,255,255,1);
 			
 		}
