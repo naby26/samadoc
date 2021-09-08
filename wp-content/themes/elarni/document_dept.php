@@ -217,13 +217,26 @@ get_header();
 
         </div>
         <div class="contenu_document">
-        <?php
+        <?php       
+                    $per_page_record = 10;       
+                    if (isset($_SESSION['page'])) {    
+                        $page=(int)$_SESSION['page'];
+                        unset($_SESSION['page']);
+                    }    
+                    else {    
+                    $page=1;    
+                    }    
+                    $start_from = ($page-1) * $per_page_record;     
+
                     $page = get_the_title();
                     $departement_page=strrchr($page,' ');
                     $departement_page=trim($departement_page);
+
                     $con = mysqli_connect("localhost","root","","samadoc");
-                    $requete = mysqli_query($con,"SELECT * FROM sd_document WHERE departement='$departement_page'");
-                    $nbr_doc = mysqli_num_rows($requete);
+                    $query = "SELECT * FROM sd_document LIMIT $start_from, $per_page_record WHERE departement='$departement_page'";     
+                    $rs_result = mysqli_query ($con, $query);
+
+                    $nbr_doc = mysqli_num_rows($rs_result);
                     mysqli_close($con);
 
                     $tab_pdf = array('.pdf','.PDF');
@@ -232,7 +245,7 @@ get_header();
                     $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
                     $icone="";
                     if($nbr_doc !==0){
-                    while($table = mysqli_fetch_array($requete)){
+                    while($table = mysqli_fetch_array($rs_result)){
 
                         $format = strrchr($table['nom'],'.');
                         if(in_array($format,$tab_pdf)){
@@ -278,6 +291,46 @@ get_header();
       
 
     </div>
+
+ <!-- PARTI DE PAGINATION -->
+ <div class="pagination">       
+    
+    <?php  
+                        
+        $con = mysqli_connect("localhost","root","","samadoc");
+        $query = "SELECT COUNT(*) FROM sd_document";     
+        $rs_result = mysqli_query($con, $query);     
+        $row = mysqli_fetch_row($rs_result);     
+        $total_records = (int)$row[0];
+          
+    echo "</br>";     
+        // Number of pages required.   
+        $total_pages = ceil($total_records / $per_page_record);     
+        $pagLink = "";       
+      
+        if($page>=2){   
+            echo "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page-1)."'> Prev </a>";   
+        }       
+                   
+        for ($i=1; $i<=$total_pages; $i++) {   
+          if ($i == $page) {   
+              $pagLink .= "<a class = 'active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";
+                                               
+          }               
+          else  {   
+              $pagLink .= "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";     
+          }   
+        }     
+        echo $pagLink;   
+  
+        if($page<$total_pages){   
+            echo "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page+1)."'>  Next </a>";   
+        } 
+        ?>
+         
+
+</div>
+                            
     <div class="footer_document">
         <?php get_footer();?>
     </div>
