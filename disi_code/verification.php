@@ -20,13 +20,16 @@
 
 
         if($password == 'passer@123'){
+        unset($_SESSION['message_erreur']);
         header("location: http://localhost/samadoc/changer-mot-de-passe/");
         }
         else{
+            unset($_SESSION['message_erreur']);
         header("location: http://localhost/samadoc/accueil/");
         }
      }
     else{
+        $_SESSION['message_erreur']="Mot de passe et/ou INE invalide";
         header("location: http://localhost/samadoc/connexion/");
      }
 

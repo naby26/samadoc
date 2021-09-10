@@ -1,8 +1,11 @@
 <?php
 session_start();
 if(!is_page( 'connexion' ) &&  !$_SESSION['username']  ){
-    wp_redirect( home_url( 'connexion' ));
-    exit;
+    if(!is_page('mot-de-passe-oublier')){
+        wp_redirect( home_url( 'connexion' ));
+            exit;
+    }
+    
 }
 
 ?>

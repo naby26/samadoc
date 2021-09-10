@@ -324,9 +324,9 @@ div.contenu_etudiant input[type="submit"]{
                                 <input type="submit" value="Valider">
                             </div>
                             <div class="info_name">
-                                <input type="text" name="username" placeholder="Nom utilisateur" value="<?php $_SESSION['username'] ?>">
-                                <input type="text" name="username" placeholder="Prenom" value="<?php $_SESSION['firstname'] ?>">
-                                <input type="text" name="username" placeholder="Nom" value="<?php $_SESSION['lastname'] ?>">
+                                <input type="text" name="username" placeholder="Nom utilisateur" value="<?php echo $_SESSION['username'] ?>">
+                                <input type="text" name="username" placeholder="Prenom" value="<?php echo $_SESSION['firstname'] ?>">
+                                <input type="text" name="username" placeholder="Nom" value="<?php echo $_SESSION['lastname'] ?>">
                                 
                                 <input type="submit" value="Enregistrer" id="enregistrer">   
                             </div>
