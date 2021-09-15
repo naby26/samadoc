@@ -1,4 +1,4 @@
-<?php
+ <?php
 /*Template name: connexion */
 get_header();
 ?>
@@ -7,6 +7,8 @@ get_header();
         background-image: url("http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position:center;
+
         /* filter: blur(8px);
         -webkit-filter: blur(8px); */
     }
@@ -103,7 +105,7 @@ if(isset($_SESSION['message_erreur'])){
 }
 ?>
 </label><br>
-<a id="a_form" href="http://localhost/samadoc/mot-de-passe-oublier/">Mot de passe oublier</a><br>
+<a id="a_form" href="http://localhost/samadoc/mot-de-passe-oublier/">Mot de passe oublié</a><br>
 <input type="submit" value="se connecter">
 <!-- </fieldset> -->
 </form>

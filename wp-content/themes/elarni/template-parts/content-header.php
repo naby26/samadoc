@@ -1,16 +1,58 @@
+<style>
+/* .page-id-58{
+        margin:0%;
+    } */
+
+
+.dt-no-header-builder-content{
+    display: flex;
+    align-items:center;
+}
+
+.rdp{
+    display:flex;
+    float:right;
+    position: relative;
+    right: 0;
+    bottom:-0.6rem;
+    font-size:large;
+    gap: 2em;
+    
+}
+
+.search-module{
+    width:100%;
+}
+
+    .ul1{
+        float: right;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ul1 li{
+        display:inline-block;
+    }
+    .ul1 li img {
+        width:50px;height:auto;
+        border-radius: 50%;
+    }
+
+
+</style>
+
+
+
+
 <div class="dt-no-header-builder-content dt-no-header-elearni">
 
 
 
     <div class="no-header-top">
-        <span><?php echo get_bloginfo( 'description', 'display' ); ?></span>
+        <span><?php //echo get_bloginfo( 'description', 'display' ); ?></span>
     </div>
 
-            <div class="profil">
-    <ul class="ul1">
-    <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil"/></a></li>
-    </ul>
-    </div>
+            
 
     <div class="no-header">
         <div class="no-header-logo-wrapper">
@@ -72,32 +114,23 @@
         </div>
         <!-- Mobile Menu -->
 
-
-
         <div class="alignright search-module simple-header-search">
-            <?php get_search_form( true ); ?>
-        </div>
-        <style>
-    .ul1{
-        float: right;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ul1 li{
-        display:inline-block;
-    }
-    .ul1 li img {
-        width:50px;height:auto;
-        border-radius: 50%;
-    }
+                        <?php get_search_form( true ); ?>
+                    </div>
 
+            
 
-</style>
-
-
-        <div>
-            <a href="http://localhost/samadoc/disi_code/deconnexion.php">Déconnexion</a>
-        </div>
+       
     </div>
 </div>
+<div class="rdp">
+                    <div>
+                        <a href="http://localhost/samadoc/disi_code/deconnexion.php">Déconnexion</a>
+                    </div>
+                    <div class="profil">
+                    <ul class="ul1">
+                    <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a></li>
+                    </ul>
+                    </div>
+
+            </div>
