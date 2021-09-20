@@ -57,24 +57,43 @@ get_header();
                         grid-template-rows: auto auto auto;
                     }
                     .corps_document{
-                        display: grid;
-                        grid-template-columns: 1fr 4fr;
+                        display: flex;
+                        flex-direction:column;
+                        align-items:center;
+                        margin:2% 10%;
+                        
+                        gap: 2em 0;
+                        
                     }
                     .contenu_document{
                         display: grid;
-                        grid-template-columns: auto auto;
-                        justify-content: space-around;
+                        grid-template-columns: 48% 48%;
+                        justify-content: space-between;
+                        /* padding:2em; */
+                        /* box-shadow:2px 2px 10px grey; */
+                        width:100%;
+                        background-color: white ;
+
                     }
                     .sidebar_info_document p{
                         text-align: center;
                         background-color: antiquewhite;
                         padding-top: 5px;
                     }
-                    .sidebar_document{
-                        padding: 25px;
-                        border-right: 2px solid;
-                        background-color:  rgb(147, 201, 248);
+                    .sidebar_menu{
+                    padding:1em 2em;
+                    box-shadow: 2px 2px 10px grey;
+                    width:100%;
+                   
+                    
+                    background: rgb(10,107,49);
+
                     }
+                    label.ufr_actuel{
+                        font-size: x-large;
+                        color: white ; 
+                    }
+
                     .details_sidebar{
                         font-size: large;
                     }
@@ -82,6 +101,39 @@ get_header();
                         padding-left: 30px;
                     }
 
+                    div.bloc_ufr{
+                        display:flex;
+                        flex-direction:column;
+                        gap:1em 0;
+                        width: 100%;
+                       
+                    }
+
+                    label.ufr_actuel{
+                        text-align: center;
+                        
+                        /* text-shadow: 0px 0px 2px brown; */
+                    }
+
+
+                    div.lien_departement{
+                        display:flex;
+                        justify-content:space-around;
+                        width: 100%;
+                        /* border:1px solid; */
+                        
+                    }
+                    a.lien_dept{
+                        border:1px solid white;
+                        padding: 1px 1em;
+                        background-color:rgb(132,181,39);
+                        color:white;
+
+                    }
+
+                    input[type="submit"]{
+                        background-color:green ;
+                    }
 
                     @media(max-width:800px){
                         .contenu_document{
@@ -129,95 +181,50 @@ get_header();
 		<img src="https://img.icons8.com/ios-glyphs/480/000000/add--v2.png" class="icone_ajout" title="Ajouter un Document">
 	</a>
     <div class="corps_document">
-        <div class="sidebar_document">
+        <!-- <div class="sidebar_document"> -->
             <div class="sidebar_menu">
-            <details class="details_sidebar">
-                        <summary>Dept MI</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/mpi/">MPI</a><br>
-                            <a href="http://localhost/samadoc/agrotic/">AgroTic</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept HGRMER</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/ahasiha/"> AHSIHA</a><br>
-                            <a href="http://localhost/samadoc/agroequipements/">AgroEquipements</a><br>
-                            <a href="http://localhost/samadoc/erf/">ERF</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept STA</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/trana/"> TRANA</a><br>
-                            <a href="http://localhost/samadoc/tar/">TAR</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept APV</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/phtp/">PHTP</a><br>
-                            <a href="http://localhost/samadoc/abe/">ABE</a><br>
-                            <a href="http://localhost/samadoc/agroforesterie/">AgroForesterie</a><br>
-                            <a href="http://localhost/samadoc/psp/">PSP</a><br>
-                            <a href="http://localhost/samadoc/pp/">PP</a><br>
-                            <a href="http://localhost/samadoc/foresterie/">Foresterie</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept STE</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/zsa/">ZSA</a><br>
-                            <a href="http://localhost/samadoc/qdaoa/">QDAOA</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept GRHPA</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/aquaculture/">Aquaculture</a><br>
-                            <a href="http://localhost/samadoc/peche/">Pêche</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept NA</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/nsa/">NSA</a><br>
-                            <a href="http://localhost/samadoc/nhd/">NHD</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept THRG</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/hrg/">HRG</a><br>
-                            <a href="http://localhost/samadoc/ptmc/">PTMC</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept SEGC</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/egfr/">EGFR</a><br>
-                            <a href="http://localhost/samadoc/meaa/">MEAA</a><br>
-                            <a href="http://localhost/samadoc/cpaf/">CPAF</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept SJP</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/def/">DEF</a><br>
-                            <a href="http://localhost/samadoc/aam/">AAM</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept </summary>
-                    </details>
+            <?php 
+            $page = get_the_title();            
+                $ufr_page =strrchr($page,' ');
+             // $ufr_page=strtolower($ufr_page);             
+                $ufr_page=trim($ufr_page);
+                $_SESSION['nom_page']=$ufr_page; //recupérer le nom page
+
+                $con = mysqli_connect("localhost","root","","samadoc");
+                $information = mysqli_query($con,"SELECT * FROM sd_structure  WHERE ufr_sigle='$ufr_page'");
+             $tab_structure=mysqli_fetch_array($information);
+            $ufr=$tab_structure['ufr_sigle'];
+            $liste_depte=  mysqli_query($con,"SELECT DISTINCT departement_sigle, departement FROM sd_structure WHERE ufr_sigle='$ufr' ");
+            
+           ?>
+            <div class="bloc_ufr">
+                 <label class="ufr_actuel" > <?php echo $tab_structure['ufr']; ?></label>
+
+                
+                  
+                  <div class="lien_departement">
+                  <?php
+                    while ($tab_dept=mysqli_fetch_array($liste_depte)) {
+                        ?>
+                            
+                            <a class="lien_dept" href='http://localhost/samadoc/dept-<?php echo $tab_dept['departement_sigle']; ?>' title="<?php echo $tab_dept['departement']; ?>"> Dept <?php echo $tab_dept['departement_sigle']; ?> </a> <br> <?php
+                            
+                        }?>
+                  </div>
+               
+
+            </div>
+           
+                    
             </div>
             
 
-        </div>
+        <!-- </div> -->
         <div class="contenu_document">
         <?php
-                    
-                    $per_page_record = 10;       
+                   
+                    mysqli_close($con);
+                    $per_page_record = 5;       
                     if (isset($_SESSION['page'])) {    
                         $page=(int)$_SESSION['page'];
                         unset($_SESSION['page']);
@@ -225,17 +232,11 @@ get_header();
                     else {    
                     $page=1;    
                     }    
-                    $start_from = ($page-1) * $per_page_record;    
-
-                    $page = get_the_title();
-                    $ufr_page =strrchr($page,' ');
-                    // $ufr_page=strtolower($ufr_page);
-                    $ufr_page=trim($ufr_page);
+                    $start_from = ($page-1) * $per_page_record;     
+                    
                     $con = mysqli_connect("localhost","root","","samadoc");
-                    $query = "SELECT * FROM sd_document  WHERE ufr='$ufr_page' LIMIT $start_from, $per_page_record";     
+                    $query = "SELECT * FROM sd_document WHERE ufr='$ufr_page' LIMIT $start_from, $per_page_record";     
                     $rs_result = mysqli_query ($con, $query);
-                    $nbr_doc = mysqli_num_rows($rs_result);
-                    mysqli_close($con);
 
                     $tab_pdf = array('.pdf','.PDF');
                     $tab_word = array('.docx','.DOCX');
@@ -243,7 +244,7 @@ get_header();
                     $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
                     $icone="";
                     if($nbr_doc !==0){
-                    while($table = mysqli_fetch_array($rs_result)){
+                    while($table = mysqli_fetch_array($rs_result )){
 
                         $format = strrchr($table['nom'],'.');
                         if(in_array($format,$tab_pdf)){
@@ -274,7 +275,7 @@ get_header();
                                     <label >Année: </label> <?php echo $table['annee'];?><br>
                                 </div>
                                 <div class="div_input">
-                                    <a download="<?php echo $table['nom']; ?>" href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>"><input type="submit" value="Télécharger"></a>
+                                    <a download="<?php echo $table['nom']; ?>" href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" ><input type="submit" value="Télécharger" class="telecharger"></a>
                                 </div>
                             </div>
 
@@ -295,7 +296,7 @@ get_header();
     <?php  
                         
         $con = mysqli_connect("localhost","root","","samadoc");
-        $query = "SELECT COUNT(*) FROM sd_document";     
+        $query = "SELECT COUNT(*) FROM sd_document WHERE ufr='$ufr_page'";     
         $rs_result = mysqli_query($con, $query);     
         $row = mysqli_fetch_row($rs_result);     
         $total_records = (int)$row[0];
@@ -306,27 +307,28 @@ get_header();
         $pagLink = "";       
       
         if($page>=2){   
-            echo "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page-1)."'> Prev </a>";   
+            echo "<a href='http://localhost/samadoc/disi_code/ufr_pagination.php?page=".($page-1)."'> Prev </a>";   
         }       
                    
         for ($i=1; $i<=$total_pages; $i++) {   
           if ($i == $page) {   
-              $pagLink .= "<a class = 'active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";
+              $pagLink .= "<a class = 'active' href='http://localhost/samadoc/disi_code/ufr_pagination.php?page=".$i."'>".$i." </a>";
                                                
           }               
           else  {   
-              $pagLink .= "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";     
+              $pagLink .= "<a href='http://localhost/samadoc/disi_code/ufr_pagination.php?page=".$i."'>".$i." </a>";     
           }   
         }     
         echo $pagLink;   
   
         if($page<$total_pages){   
-            echo "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page+1)."'>  Next </a>";   
+            echo "<a href='http://localhost/samadoc/disi_code/ufr_pagination.php?page=".($page+1)."'>  Next </a>";   
         } 
         ?>
          
 
 </div>
+
     <div class="footer_document">
         <?php get_footer();?>
     </div>

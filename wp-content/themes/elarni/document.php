@@ -5,9 +5,8 @@ Template name: Document
 get_header();
 ?>
 <style>
-
-
-                    .icone_ajout{
+                
+                .icone_ajout{
                         width: 30px;
                     }
                     .bouton_ajout:hover{
@@ -27,6 +26,7 @@ get_header();
                         transform: scale(2.5);
                         z-index: 999;
                     }
+
                     .div_doc{
                 display: inline-flex;
                 justify-content:space-evenly;
@@ -57,29 +57,78 @@ get_header();
                         grid-template-rows: auto auto auto;
                     }
                     .corps_document{
-                        display: grid;
-                        grid-template-columns: 1fr 4fr;
+                        display: flex;
+                        flex-direction:column;
+                        align-items:center;
+                        margin:2% 10%;
+                        
+                        gap: 2em 0;
+                        
                     }
                     .contenu_document{
                         display: grid;
-                        grid-template-columns: auto auto;
-                        justify-content: space-around;
+                        grid-template-columns: 48% 48%;
+                        justify-content: space-between;
+                        /* padding:2em; */
+                        /* box-shadow:2px 2px 10px grey; */
+                        width:100%;
+                        background-color: white ;
+
                     }
                     .sidebar_info_document p{
                         text-align: center;
                         background-color: antiquewhite;
                         padding-top: 5px;
                     }
-                    .sidebar_document{
-                        padding: 25px;
-                        border-right: 2px solid;
-                        background-color:  rgb(147, 201, 248);
+                    .sidebar_menu{
+                    padding:1em 2em;
+                    box-shadow: 2px 2px 10px grey;
+                    width:100%;
+                   
+                    
+                    background: rgb(10,107,49);
+
                     }
+                    label.ufr_actuel{
+                        font-size: x-large;
+                        color: white ; 
+                    }
+
                     .details_sidebar{
                         font-size: large;
                     }
                     .details_sidebar p{
                         padding-left: 30px;
+                    }
+
+                    div.bloc_ufr{
+                        display:flex;
+                        flex-direction:column;
+                        gap:1em 0;
+                        width: 100%;
+                       
+                    }
+
+                    label.ufr_actuel{
+                        text-align: center;
+                        
+                        /* text-shadow: 0px 0px 2px brown; */
+                    }
+
+
+                    div.lien_departement{
+                        display:flex;
+                        justify-content:space-around;
+                        width: 100%;
+                        /* border:1px solid; */
+                        
+                    }
+                    a.lien_dept{
+                        border:1px solid white;
+                        padding: 1px 1em;
+                        background-color:rgb(132,181,39);
+                        color:white;
+
                     }
 
 
@@ -105,6 +154,8 @@ get_header();
                    
                 </style>
 
+
+
 <div class="body_document">
     <div class="nav_document">
         <!-- Navigateur -->            
@@ -127,94 +178,44 @@ get_header();
 		<img src="https://img.icons8.com/ios-glyphs/480/000000/add--v2.png" class="icone_ajout" title="Ajouter un Document">
 	</a>
     <div class="corps_document">
-        <div class="sidebar_document">
+        <!-- <div class="sidebar_document"> -->
             <div class="sidebar_menu">
-                    <details class="details_sidebar">
-                        <summary>Dept MI</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/mpi/">MPI</a><br>
-                            <a href="http://localhost/samadoc/agrotic/">AgroTic</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept HGRMER</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/ahasiha/"> AHSIHA</a><br>
-                            <a href="http://localhost/samadoc/agroequipements/">AgroEquipements</a><br>
-                            <a href="http://localhost/samadoc/erf/">ERF</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept STA</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/trana/"> TRANA</a><br>
-                            <a href="http://localhost/samadoc/tar/">TAR</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept APV</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/phtp/">PHTP</a><br>
-                            <a href="http://localhost/samadoc/abe/">ABE</a><br>
-                            <a href="http://localhost/samadoc/agroforesterie/">AgroForesterie</a><br>
-                            <a href="http://localhost/samadoc/psp/">PSP</a><br>
-                            <a href="http://localhost/samadoc/pp/">PP</a><br>
-                            <a href="http://localhost/samadoc/foresterie/">Foresterie</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept STE</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/zsa/">ZSA</a><br>
-                            <a href="http://localhost/samadoc/qdaoa/">QDAOA</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept GRHPA</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/aquaculture/">Aquaculture</a><br>
-                            <a href="http://localhost/samadoc/peche/">Pêche</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept NA</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/nsa/">NSA</a><br>
-                            <a href="http://localhost/samadoc/nhd/">NHD</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept THRG</summary>
-                        <p>
-                            <a href="#">NSA</a><br>
-                            <a href="#">NHD</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept SEGC</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/egfr/">EGFR</a><br>
-                            <a href="http://localhost/samadoc/meaa/">MEAA</a><br>
-                            <a href="http://localhost/samadoc/cpaf/">CPAF</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept SJP</summary>
-                        <p>
-                            <a href="http://localhost/samadoc/def/">DEF</a><br>
-                            <a href="http://localhost/samadoc/aam/">AAM</a>
-                        </p>
-                    </details>
-                    <details class="details_sidebar">
-                        <summary>Dept MI</summary>
-                    </details>
+            <?php 
+           
+
+                $con = mysqli_connect("localhost","root","","samadoc");
+                $information = mysqli_query($con,"SELECT * FROM sd_structure  ");
+                $tab_structure=mysqli_fetch_array($information);
+                $ufr=$tab_structure['ufr_sigle'];
+                $liste_depte=  mysqli_query($con,"SELECT DISTINCT ufr_sigle,ufr FROM sd_structure");
+            
+           ?>
+            <div class="bloc_ufr">
+                 <label class="ufr_actuel" > DOCUMENT  </label>                
+                  
+                  <div class="lien_departement">
+                  <?php
+                    while ($tab_dept=mysqli_fetch_array( $liste_depte)) {
+                        ?>
+                            
+                            <a class="lien_dept" href='http://localhost/samadoc/ufr-<?php echo $tab_dept['ufr_sigle']; ?>' title="<?php echo $tab_dept['ufr']; ?>"> UFR <?php echo $tab_dept['ufr_sigle']; ?> </a> <br> <?php
+                            
+                        }?>
+                  </div>
+               
+
+            </div>
+           
+                    
             </div>
             
 
-        </div>
+        <!-- </div> -->
         <div class="contenu_document">
-        <?php       
-                    $per_page_record = 10;       
+        <?php
+                   
+                    mysqli_close($con);
+                    $per_page_record = 5;       
                     if (isset($_SESSION['page'])) {    
                         $page=(int)$_SESSION['page'];
                         unset($_SESSION['page']);
@@ -233,21 +234,21 @@ get_header();
                     $tab_excel = array('.csv','.xlsx','.xlsm');
                     $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
                     $icone="";
-
-                    while($table = mysqli_fetch_array($rs_result)){
+                    if($nbr_doc !==0){
+                    while($table = mysqli_fetch_array($rs_result )){
 
                         $format = strrchr($table['nom'],'.');
                         if(in_array($format,$tab_pdf)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/file_type_pdf_icon_1302741.png";
+                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/pdf.png";
                         }
                         if(in_array($format,$tab_word)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/2048px-.docx_icon.svg1_.png";
+                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/doc.png";
                         }
                         if(in_array($format,$tab_excel)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/519281.png";
+                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/xls.png";
                         }
                         if(in_array($format,$tab_ppt)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/1200px-.pptx_icon_2019.svg1_.png";
+                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/ppt.png";
                         }
                         ?>
                         
@@ -258,7 +259,7 @@ get_header();
                                 </a>
                                 </div>
                                 <div class="div_label">
-                                    <label >Licence: </label> <?php echo $table['licence'];?><br>
+                                    <label >UFR: </label> <?php echo $table['ufr'];?><br>
                                     <label >Nature: </label> <?php echo $table['nature'];?><br>
                                     <label >Module: </label> <?php echo $table['module'];?><br>
                                     <label >Niveau: </label> <?php echo $table['niveau'];?><br>
@@ -271,8 +272,11 @@ get_header();
 
                         <?php
                         
-                        }
-                        mysqli_close($con);?>
+                        }}else{?>
+                                <label>Cette UFR ne comporte aucun document enregistrer. </label><br>
+                                <label>Veuillez en <a href="http://localhost/samadoc/ajout-de-documents/">ajouter un !</a></label>
+                        <?php }
+                        ?>
         </div>
       
 
