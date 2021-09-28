@@ -121,7 +121,7 @@
         <!-- Mobile Menu -->
       
         <div class="alignright search-module simple-header-search input_recherche">
-                         <?php get_search_form( true ); ?>  
+                         <!-- <?php get_search_form( true ); ?>   -->
                     </div>
 
             
