@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: Document
+Template name: Document_resultat_recherche
 */
 get_header();
 ?>
@@ -28,6 +28,7 @@ a.active:hover{
     border:2px solid rgb(10,107,49);
     border-radius:5px;
 }
+
 a.active:active{
     font-size:x-large;
     text-decoration:none;
@@ -40,33 +41,6 @@ a.active:active{
     border-radius:5px;
 }
 
-
-
-
-
-
-
-                
-                .icone_ajout{
-                        width: 30px;
-                    }
-                    .bouton_ajout:hover{
-                        transform: scale(3.5);
-                        transition: 0.4s all;
-                    }
-                    .bouton_ajout{
-                        border-radius: 50%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position:fixed;
-                        right: 90px;
-                        bottom: 90px;
-                        cursor: pointer;
-                        transition: 0.4s all;
-                        transform: scale(2.5);
-                        z-index: 999;
-                    }
 
                     .div_doc{
                 display: inline-flex;
@@ -125,8 +99,7 @@ a.active:active{
                     padding:1em 2em;
                     box-shadow: 2px 2px 10px grey;
                     width:100%;
-                   
-                    
+                                  
                     background: rgb(10,107,49);
 
                     }
@@ -161,17 +134,22 @@ a.active:active{
                         display:flex;
                         justify-content:space-around;
                         width: 100%;
-                        gap:0 1em;
                         /* border:1px solid; */
                         
                     }
                     a.lien_dept{
                         border:1px solid white;
                         padding: 1px 1em;
-                        width:100%;
                         background-color:rgb(132,181,39);
                         color:white;
 
+                    }
+                    .bloc_ufr a{
+                        text-align:center;
+                    }
+
+                    .bloc_ufr a :hover{
+                        cursor:pointer;
                     }
 
 
@@ -181,22 +159,6 @@ a.active:active{
                             grid-template-columns: auto;
                             justify-content: center;
                         }
-                    }
-                    @media(max-width:730px){
-                        .contenu_document{
-                            display: grid;
-                            grid-template-columns: auto;
-                            justify-content: center;
-                        }
-                        div.lien_departement{
-                        display:flex;
-                        flex-wrap:wrap;
-                        gap:1em 0;
-                        justify-content:space-around;
-                        width: 100%;
-                        /* border:1px solid; */
-                        
-                    }
                     }
                     @media(max-width:500px){
                         .div_doc{
@@ -209,6 +171,11 @@ a.active:active{
                             display: grid;
                             grid-template-columns: auto;
                         }
+                    }
+
+                    span{
+                        color: white;
+                        font-size: large;
                     }
                    
                 </style>
@@ -233,33 +200,30 @@ a.active:active{
             </div>
         </header><!-- **Header - End ** -->
     </div>
-    <a href="http://localhost/samadoc/ajout-de-documents/" class="bouton_ajout">
-		<img src="https://img.icons8.com/ios-glyphs/480/000000/add--v2.png" class="icone_ajout" title="Ajouter un Document">
-	</a>
+
     <div class="corps_document">
         <!-- <div class="sidebar_document"> -->
             <div class="sidebar_menu">
             <?php 
-           
+        $recherche=$_GET['recherche'];
+        $recherche = htmlspecialchars($recherche); //pour sécuriser le formulaire contre les intrusions html
+        $recherche = trim($recherche); //pour supprimer les espaces dans la requête de l'internaute
+        $recherche = strip_tags($recherche); //pour supprimer les balises html dans la requête
+
+            
 
                 $con = mysqli_connect("localhost","root","","samadoc");
-                $information = mysqli_query($con,"SELECT * FROM sd_structure  ");
-                $tab_structure=mysqli_fetch_array($information);
-                $ufr=$tab_structure['ufr_sigle'];
-                $liste_depte=  mysqli_query($con,"SELECT DISTINCT ufr_sigle,ufr FROM sd_structure");
-            
+                $information = mysqli_query($con,"SELECT * FROM sd_document WHERE nom LIKE '%$recherche%' ");
+             $tab_structure=mysqli_fetch_array($information);
+             $resultat=mysqli_num_rows($information);
+
            ?>
             <div class="bloc_ufr">
-                 <label class="ufr_actuel" > DOCUMENT  </label>                
+           
                   
                   <div class="lien_departement">
-                  <?php
-                    while ($tab_dept=mysqli_fetch_array( $liste_depte)) {
-                        ?>
-                            
-                            <a class="lien_dept" href='http://localhost/samadoc/ufr-<?php echo $tab_dept['ufr_sigle']; ?>' title="<?php echo $tab_dept['ufr']; ?>"> UFR <?php echo $tab_dept['ufr_sigle']; ?> </a> <br> <?php
-                            
-                        }?>
+                      <span> Nombre de reponse: <?php echo  $resultat; ?></span>
+                 
                   </div>
                
 
@@ -272,9 +236,9 @@ a.active:active{
         <!-- </div> -->
         <div class="contenu_document">
         <?php
-                   
+                        
                     mysqli_close($con);
-                    $per_page_record = 5;       
+                    $per_page_record = 2;       
                     if (isset($_SESSION['page'])) {    
                         $page=(int)$_SESSION['page'];
                         unset($_SESSION['page']);
@@ -285,8 +249,10 @@ a.active:active{
                     $start_from = ($page-1) * $per_page_record;     
                     
                     $con = mysqli_connect("localhost","root","","samadoc");
-                    $query = "SELECT * FROM sd_document LIMIT $start_from, $per_page_record";     
+                    $query = "SELECT * FROM sd_document WHERE nom LIKE '%$recherche%'  LIMIT $start_from, $per_page_record";     
                     $rs_result = mysqli_query ($con, $query);
+
+                    
 
                     $tab_pdf = array('.pdf','.PDF');
                     $tab_word = array('.docx','.DOCX');
@@ -294,7 +260,7 @@ a.active:active{
                     $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
                     $icone="";
                     if($nbr_doc !==0){
-                    while($table = mysqli_fetch_array($rs_result )){
+                    while($table = mysqli_fetch_array( $rs_result)){
 
                         $format = strrchr($table['nom'],'.');
                         if(in_array($format,$tab_pdf)){
@@ -318,11 +284,11 @@ a.active:active{
                                 </a>
                                 </div>
                                 <div class="div_label">
-                                    <label >UFR: </label> <?php echo $table['ufr'];?><br>
-                                    <label >Nature: </label> <?php echo $table['nature'];?><br>
+                                    <label >nom: </label> <?php echo $table['nom'];?><br>
+                                    <!-- <label >Nature: </label> <?php echo $table['nature'];?><br>
                                     <label >Module: </label> <?php echo $table['module'];?><br>
                                     <label >Niveau: </label> <?php echo $table['niveau'];?><br>
-                                    <label >Année: </label> <?php echo $table['annee'];?><br>
+                                    <label >Année: </label> <?php echo $table['annee'];?><br> -->
                                 </div>
                                 <div class="div_input">
                                     <a download="<?php echo $table['nom']; ?>" href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>"><input type="submit" value="Télécharger"></a>
@@ -332,52 +298,52 @@ a.active:active{
                         <?php
                         
                         }}else{?>
-                                <label>Cette UFR ne comporte aucun document enregistrer. </label><br>
-                                <label>Veuillez en <a href="http://localhost/samadoc/ajout-de-documents/">ajouter un !</a></label>
+                                <label>Aucun document trouvé. </label><br>
+                              
                         <?php }
                         ?>
         </div>
       
 
     </div>
-     <!-- PARTI DE PAGINATION -->
-<div class="pagination">       
-    
-    <?php  
+         <!-- PARTI DE PAGINATION -->
+        <div class="pagination">       
+            
+            <?php  
+                                
+                $con = mysqli_connect("localhost","root","","samadoc");
+                $query = "SELECT * FROM sd_document WHERE nom LIKE '%$recherche%'";     
+                $rs_result = mysqli_query($con, $query);     
+                $row = mysqli_fetch_row($rs_result);     
+                $total_records = (int)$row[0];
+                
+            echo "</br>";     
+                // Number of pages required.   
+                $total_pages = ceil($total_records / $per_page_record);     
+                $pagLink = "";       
+            
+                if($page>=2){   
+                    echo "<a href='http://localhost/samadoc/disi_code/resultat_recherche_pagination.php?page=".($page-1)."'> Prev </a>";   
+                }       
                         
-        $con = mysqli_connect("localhost","root","","samadoc");
-        $query = "SELECT COUNT(*) FROM sd_document";     
-        $rs_result = mysqli_query($con, $query);     
-        $row = mysqli_fetch_row($rs_result);     
-        $total_records = (int)$row[0];
-          
-    echo "</br>";     
-        // Number of pages required.   
-        $total_pages = ceil($total_records / $per_page_record);     
-        $pagLink = "";       
-      
-        if($page>=2){   
-            echo "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page-1)."'> Precedant </a>";   
-        }       
-                   
-        for ($i=1; $i<=$total_pages; $i++) {   
-          if ($i == $page) {   
-              $pagLink .= "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";
-                                               
-          }               
-          else  {   
-              $pagLink .= "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";     
-          }   
-        }     
-        echo $pagLink;   
-  
-        if($page<$total_pages){   
-            echo "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page+1)."'>  Suivant </a>";   
-        } 
-        ?>
-         
+                for ($i=1; $i<=$total_pages; $i++) {   
+                if ($i == $page) {   
+                    $pagLink .= "<a class = 'active' href='http://localhost/samadoc/disi_code/resultat_recherche_pagination.php?page=".$i."'>".$i." </a>";
+                                                    
+                }               
+                else  {   
+                    $pagLink .= "<a href='http://localhost/samadoc/disi_code/resultat_recherche_pagination.php?page=".$i."'>".$i." </a>";     
+                }   
+                }     
+                echo $pagLink;   
+        
+                if($page<$total_pages){   
+                    echo "<a href='http://localhost/samadoc/disi_code/resultat_recherche_pagination.php?page=".($page+1)."'>  Next </a>";   
+                } 
+                ?>
+                
 
-</div>
+        </div>
 
     <div class="footer_document">
         <?php get_footer();?>

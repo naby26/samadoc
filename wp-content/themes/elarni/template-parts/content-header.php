@@ -6,15 +6,27 @@
 
 .dt-no-header-builder-content{
     display: flex;
-    align-items:center;
+    /* align-items:center; */
+    justify-content: center;
 }
-
+div.recherche{
+    width: 50%;
+    padding: 0;
+}
+div.doc{
+          display: flex;
+          /* flex-direction: column; */
+          gap: 0 1em;
+          justify-content: center;
+      }
 .rdp{
+    margin-right: 0;
+    width: 100%;
     display:flex;
     float:right;
-    position: relative;
-    right: 0;
-    bottom:-0.6rem;
+    /* position: relative;
+    right: 0; */
+    /* bottom:-0.6rem; */
     font-size:large;
     gap: 2em;
     
@@ -41,8 +53,47 @@
      img.image{
         width:150px;
         height:100px;
-    
     } 
+    .connexion_profil{
+         /* width: 100%;
+         display: flex;  */
+         
+      }
+      #toto{
+     width: 100%;
+      }
+      div.profil {
+          width: 100%;
+          float: right;
+          /* margin-right: 0; */
+      }
+      div.profil a img{
+          width: 15vh;
+      }
+#logo_ussein{
+    width: 100%;
+}
+
+  @media(max-width:800px){
+      div.doc{
+          display: flex;
+          flex-direction: column;
+          gap: 1em 0;
+      }
+    
+
+  }
+
+    @media(max-width:700px){
+      .dt-no-header-builder-content, .dt-no-header-elearni {
+          display: flex;
+          flex-direction: column;
+          }
+          .connexion_profil{
+        display: flex;
+      }
+      
+    }
 
 
 </style>
@@ -60,7 +111,7 @@
 
             
 
-    <div class="no-header">
+    <!-- <div class="no-header">  -->
         <div class="no-header-logo-wrapper">
             <div class="dt-logo-container logo-align-left">
                 <?php
@@ -80,7 +131,7 @@
                         </div><?php
                     }
                 } else { ?>
-                    <a  rel="home">
+                    <a id="logo_ussein" rel="home">
                          <img class="image" src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO-e1632675134890.png" <?php //echo ELEARNI_THEME_URI.'/images/logo.png'; ?>    alt="Logo USSEIN" title="Universite du Sine Saloum"/>  
                     </a><?php
                 } ?>
@@ -119,33 +170,47 @@
             <div class="overlay"></div>
         </div>
         <!-- Mobile Menu -->
-      
-        <div class="alignright search-module simple-header-search input_recherche">
-                         <!-- <?php get_search_form( true ); ?>   -->
-                    </div>
+      <!-- <div class="doc"> -->
+        
 
             
 
        
-    </div>
-</div>
-<div class="rdp">
-                    <div>
-                        <a href="http://localhost/samadoc/disi_code/deconnexion.php">Déconnexion</a>
-                    </div>
-                    <div class="profil">
-                    <?php 
-                    if($_SESSION['status']==0){
-                    ?>
-                    <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a>
-                    <?php }
-                    else { ?>
-                     <a href="http://localhost/samadoc/profil-administrateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a>
-                    <?php } ?>
-                    </div>
+    <!-- </div> -->
+<!-- </div> -->
+ <!-- <div class="rdp"> -->
+     
+     <!-- <div class="connexion_profil"> -->
+         <!-- <div id="toto"> -->
+          <div class="rdp">
+          <a href="http://localhost/samadoc/disi_code/deconnexion.php">Déconnexion</a>
+         </div>
+ 
+      <div class="profil rdp">
+      <?php 
+      if($_SESSION['status']==0){
+      ?>
+      <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " /></a>
+      <?php }
+      else { ?>
+       <a href="http://localhost/samadoc/profil-administrateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" "/></a>
+      <?php } ?>
+      </div>
+    <!-- </div> -->
+  <!-- </div>      -->
+<!-- </div> -->
+<!-- <div class="alignright search-module simple-header-search input_recherche"> -->
+    <div class="recherche">
+                         <?php 
+                         if(!is_page('accueil')){
+                           get_search_form( true );  
+                         }   ?>  
 
-            </div>
-
- <!-- <ul class="ul1">
-                    <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a></li>
-                    </ul>   -->
+                    </div>
+                  <!-- </div> -->
+     </div>
+     
+     
+     <!-- <ul class="ul1">
+         <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a></li>
+        </ul>   -->
