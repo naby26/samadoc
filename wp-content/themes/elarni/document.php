@@ -5,6 +5,36 @@ Template name: Document
 get_header();
 ?>
 <style>
+
+a.active{
+    font-size:x-large;
+    text-decoration:none;
+    color:rgb(10,107,49);
+    text-align:center;
+    padding:0.5em 1em;
+    margin:2px;
+    background-color:white;
+    border:2px solid rgb(10,107,49);
+    border-radius:10px;
+}
+a.active:hover{
+    font-size:x-large;
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    padding:1px 1em;
+    margin:2px;
+    background-color:rgb(10,107,49);
+    border:2px solid rgb(10,107,49);
+    border-radius:5px;
+}
+
+
+
+
+
+
+
                 
                 .icone_ajout{
                         width: 30px;
@@ -120,12 +150,14 @@ get_header();
                         display:flex;
                         justify-content:space-around;
                         width: 100%;
+                        gap:0 1em;
                         /* border:1px solid; */
                         
                     }
                     a.lien_dept{
                         border:1px solid white;
                         padding: 1px 1em;
+                        width:100%;
                         background-color:rgb(132,181,39);
                         color:white;
 
@@ -138,6 +170,22 @@ get_header();
                             grid-template-columns: auto;
                             justify-content: center;
                         }
+                    }
+                    @media(max-width:730px){
+                        .contenu_document{
+                            display: grid;
+                            grid-template-columns: auto;
+                            justify-content: center;
+                        }
+                        div.lien_departement{
+                        display:flex;
+                        flex-wrap:wrap;
+                        gap:1em 0;
+                        justify-content:space-around;
+                        width: 100%;
+                        /* border:1px solid; */
+                        
+                    }
                     }
                     @media(max-width:500px){
                         .div_doc{
@@ -298,22 +346,22 @@ get_header();
         $pagLink = "";       
       
         if($page>=2){   
-            echo "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page-1)."'> Prev </a>";   
+            echo "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page-1)."'> Precedant </a>";   
         }       
                    
         for ($i=1; $i<=$total_pages; $i++) {   
           if ($i == $page) {   
-              $pagLink .= "<a class = 'active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";
+              $pagLink .= "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";
                                                
           }               
           else  {   
-              $pagLink .= "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";     
+              $pagLink .= "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".$i."'>".$i." </a>";     
           }   
         }     
         echo $pagLink;   
   
         if($page<$total_pages){   
-            echo "<a href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page+1)."'>  Next </a>";   
+            echo "<a class ='active' href='http://localhost/samadoc/disi_code/document_pagination.php?page=".($page+1)."'>  Suivant </a>";   
         } 
         ?>
          

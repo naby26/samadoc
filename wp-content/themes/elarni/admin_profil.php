@@ -170,7 +170,7 @@ $solution_cpaf = mysqli_num_rows($req_cpaf);
     div.box_slider{
         grid-area: slider;
         padding: 1em;
-        background-color: rgb(68, 68, 68);
+        background-color: rgb(10, 107, 49);
         display: flex;
         flex-direction: column;
         gap:0 3em;
@@ -236,9 +236,9 @@ $solution_cpaf = mysqli_num_rows($req_cpaf);
     }
     div.entete_conteneur span#Dashbord{
         text-align:center ;
-        color:blue;
+        color:rgb(10, 107, 49);
         font-size: xx-large;
-        text-shadow: 0 0 5px brown;
+        text-shadow: 0 0 5px rgb(141,54,20);
         float: left;
     }
     div.entete_conteneur div.avatar_admin{
@@ -338,7 +338,7 @@ $solution_cpaf = mysqli_num_rows($req_cpaf);
   div.case_suppression{
     display: flex;
       flex-direction: column;
-      border: 2px solid rgb(70, 70, 70); 
+      border: 2px solid rgb(10, 107, 49); 
       margin-bottom:1em;
   }
   div.contenu_suppression{
@@ -359,7 +359,7 @@ $solution_cpaf = mysqli_num_rows($req_cpaf);
     text-align: center;
       width:100%;
       padding: 5px;
-      background-color: rgb(70, 70, 70);
+      background-color: rgb(10, 107, 49);
       color:white;
       font-size: x-large;
   }
@@ -368,13 +368,13 @@ $solution_cpaf = mysqli_num_rows($req_cpaf);
   div.case_etudiant{ width:100%;
       display: flex;
       flex-direction: column;
-      border: 2px solid rgb(70, 70, 70);
+      border: 2px solid rgb(10, 107, 49);
   }
   span#modifier_etudiant{
     text-align: center;
       width:100%;
       padding: 5px;
-      background-color: rgb(70, 70, 70);
+      background-color: rgb(10, 107, 49);
       color:white;
       font-size: x-large;
   }
@@ -392,7 +392,7 @@ div.contenu_etudiant input,select{
     outline: none;
 }
 div.contenu_etudiant input[type="submit"]{
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(10, 107, 49);
     color:white;
     font-size: large;
 }
@@ -401,7 +401,7 @@ div.contenu_etudiant input[type="submit"]{
       width:100%;
       display: flex;
       flex-direction: column;
-      border: 2px solid rgb(70, 70, 70);
+      border: 2px solid rgb(10, 107, 49);
   }
   div.contenu_profil form{
       display: flex;
@@ -420,7 +420,7 @@ div.contenu_etudiant input[type="submit"]{
       text-align: center;
       width:100%;
       padding: 5px;
-      background-color: rgb(70, 70, 70);
+      background-color: rgb(10, 107, 49);
       color:white;
       font-size: x-large;
   }
@@ -438,7 +438,7 @@ div.contenu_etudiant input[type="submit"]{
         border-radius: 50%;
     }
   div.modif_avatar input[type="submit"]{
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(10, 107, 49);
       color:white;
       font-size:large;
       width: 100%;
@@ -459,7 +459,7 @@ div.contenu_etudiant input[type="submit"]{
       outline: none;
   }
   div.info_name input[type="submit"]{
-      background-color: rgb(70, 70, 70);
+      background-color: rgb(10, 107, 49);
       color:white;
       font-size:large;
   }
@@ -467,13 +467,13 @@ div.contenu_etudiant input[type="submit"]{
       width:100%;
       display: flex;
       flex-direction: column;
-      border: 2px solid rgb(0, 110, 255);
+      border: 2px solid rgb(10, 107, 49);
   }
   div.case span.titre{
       text-align: center;
       width:100%;
       padding: 5px;
-      background-color: rgb(0, 110, 255);
+      background-color:rgb(10, 107, 49);
       color:white;
       font-size: x-large;
   }
@@ -528,7 +528,7 @@ div.contenu_etudiant input[type="submit"]{
       height:3em;
       color:white;
       font-size:larger;
-      background-color:rgb(70, 70, 70);
+      background-color:rgb(10, 107, 49);
       margin-top:1em;
       border-radius: 10px;
   }
@@ -661,7 +661,7 @@ div.contenu_etudiant input[type="submit"]{
     </optgroup>
 
 
-    <optgroup label="Agroforesterie">
+    <optgroup label="LICENCE Agroforesterie">
 
 <?php
  while($tab_agroforesterie=mysqli_fetch_array($req_agroforesterie)){ 
@@ -1229,9 +1229,8 @@ div.contenu_etudiant input[type="submit"]{
                                  <input type="text" name="password_de_blocage" placeholder="Modifier mot de passe">
                                  <label for="statut">Statut : </label>
                                  <select name="status" id="statut">
-                                     <option value="0">etudiant</option>
-                                     <option value="1">administrateur</option>
-                                     <option value="2">bloquer</option>
+                                     <option value="0">Actif</option>
+                                     <option value="2">Inactif</option>
                                  </select>
                              
                                  

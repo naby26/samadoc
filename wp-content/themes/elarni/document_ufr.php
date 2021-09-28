@@ -120,6 +120,7 @@ get_header();
                         display:flex;
                         justify-content:space-around;
                         width: 100%;
+                        gap:0 1em;
                         /* border:1px solid; */
                         
                     }
@@ -128,6 +129,7 @@ get_header();
                         padding: 1px 1em;
                         background-color:rgb(132,181,39);
                         color:white;
+                        width:100%;
 
                     }
 
@@ -153,6 +155,22 @@ get_header();
                             display: grid;
                             grid-template-columns: auto;
                         }
+                    }
+                    @media(max-width:730px){
+                        .contenu_document{
+                            display: grid;
+                            grid-template-columns: auto;
+                            justify-content: center;
+                        }
+                        div.lien_departement{
+                        display:flex;
+                        flex-wrap:wrap;
+                        gap:1em 0;
+                        justify-content:space-around;
+                        width: 100%;
+                        /* border:1px solid; */
+                        
+                    }
                     }
                    
                 </style>

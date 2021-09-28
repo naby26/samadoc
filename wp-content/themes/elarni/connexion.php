@@ -12,8 +12,12 @@ get_header();
         /* filter: blur(8px);
         -webkit-filter: blur(8px); */
     }
+    body{
+    margin:auto;
+    width:500px;
+}
    .form{
-       position: absolute;
+       /* position: absolute;
        left: 50%;
        top:50%;
        width: 500px;
@@ -25,7 +29,19 @@ get_header();
        display: flex;
        justify-content: center;
        box-shadow: -0px -20px 30px rgba(0, 0, 0, 0.2);
+       border-radius: 5%; */
+        
+       margin-top: 20vh;
+       display: flex;
+       flex-direction:column;
+       padding: 1em;
+       width: 500px;
+       height:auto;
+       justify-content: center;
+       box-shadow: -0px -20px 30px rgba(0, 0, 0, 0.2);
        border-radius: 5%;
+       background-color: rgba(0, 0, 0, 0.5);
+
    }
    .form input{
        margin: auto;
@@ -85,6 +101,10 @@ get_header();
    }
    }
     
+    label.notif{
+        font-size:large;
+        color:#00eda4;
+    }
 
 </style>
 <div class="form">
@@ -95,16 +115,19 @@ get_header();
 </legend> -->
 <img src="http://localhost/samadoc/wp-content/uploads/2021/09/samadoc.png" alt="Logo Samadoc">
 <h2>Connexion</h2>
-<input type="text" name="username" id="username" placeholder="INE" required="">
-<input type="password" name="password" id="password" placeholder="Mot de passe" required="">
-<label class="lab_con">
+
+<label class="notif">
 <?php
-if(isset($_SESSION['message_erreur'])){
-    echo $_SESSION['message_erreur'];
-    unset($_SESSION['message_erreur']);
+if(isset($_SESSION['notif'])){
+    echo $_SESSION['notif'];
+    unset($_SESSION['notif']);
 }
 ?>
 </label><br>
+
+<input type="text" name="username" id="username" placeholder="INE" required="">
+<input type="password" name="password" id="password" placeholder="Mot de passe" required="">
+
 <a id="a_form" href="http://localhost/samadoc/mot-de-passe-oublier/">Mot de passe oublié</a><br>
 <input type="submit" value="se connecter">
 <!-- </fieldset> -->

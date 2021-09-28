@@ -15,7 +15,13 @@ if(isset($_POST['envoyer_o'])){
     $req = mysqli_query($con,"SELECT * FROM sd_etudiant WHERE username='$ine' AND mail='$mail'");
 
     $nbr = mysqli_num_rows($req);
+    $tab = mysqli_fetch_array($req);
 
+    if($tab['status']== 2){
+        $_SESSION['notif']="Impossible de vous generer un nouveau mot de passe car votre est bloque veillez vous signaler au pres de l'administrateur";
+        header("location: http://localhost/samadoc/mot-de-passe-oublier/");
+    }
+    else{
     if($nbr>0){
         $sujet = 'Réinitialisation de mot de passe';
         $message = '
@@ -36,13 +42,15 @@ if(isset($_POST['envoyer_o'])){
 
         if(mail($mail,$sujet,$message,$header)){
             $req1 = mysqli_query($con,"UPDATE sd_etudiant SET `password`='$psw' WHERE username='$ine'");
-            $_SESSION['message_erreur'] = "Votre demande de réinitialisation est effective. Veuillez consulter votre mail.";
+            $_SESSION['notif'] = "Votre demande de réinitialisation est effective. Veuillez consulter votre mail.";
             header("Location: http://localhost/samadoc/connexion/");
         }
-    }else{
-        $_SESSION['messageErreur'] = "Votre mail et/ou ine est non valide !";
+    }
+    else{
+        $_SESSION['notif'] = "Votre mail et/ou ine est non valide !";
         header("Location: http://localhost/samadoc/mot-de-passe-oublier/");
     }
+}
 }
 mysqli_close($con);
 

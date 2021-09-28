@@ -37,6 +37,12 @@
         width:50px;height:auto;
         border-radius: 50%;
     }
+ 
+     img.image{
+        width:150px;
+        height:100px;
+    
+    } 
 
 
 </style>
@@ -74,13 +80,13 @@
                         </div><?php
                     }
                 } else { ?>
-                    <a href="<?php echo esc_url( home_url('/') ); ?>" rel="home">
-                         <img src=" http://localhost/samadoc/disi_code/logo/samado.png" <?php //echo ELEARNI_THEME_URI.'/images/logo.png'; ?>    alt="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>"/>  
+                    <a  rel="home">
+                         <img class="image" src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO-e1632675134890.png" <?php //echo ELEARNI_THEME_URI.'/images/logo.png'; ?>    alt="Logo USSEIN" title="Universite du Sine Saloum"/>  
                     </a><?php
                 } ?>
             </div>    
         </div> 
-
+        <!-- href="<?php echo esc_url( home_url('/') ); ?>" -->
         <div class="no-header-menu dt-header-menu" data-menu="dummy-menu">
             <?php
                 $args = array(
@@ -113,9 +119,9 @@
             <div class="overlay"></div>
         </div>
         <!-- Mobile Menu -->
-
-        <div class="alignright search-module simple-header-search">
-                        <?php get_search_form( true ); ?>
+      
+        <div class="alignright search-module simple-header-search input_recherche">
+                         <?php get_search_form( true ); ?>  
                     </div>
 
             
@@ -128,9 +134,18 @@
                         <a href="http://localhost/samadoc/disi_code/deconnexion.php">Déconnexion</a>
                     </div>
                     <div class="profil">
-                    <ul class="ul1">
-                    <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a></li>
-                    </ul>
+                    <?php 
+                    if($_SESSION['status']==0){
+                    ?>
+                    <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a>
+                    <?php }
+                    else { ?>
+                     <a href="http://localhost/samadoc/profil-administrateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a>
+                    <?php } ?>
                     </div>
 
             </div>
+
+ <!-- <ul class="ul1">
+                    <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a></li>
+                    </ul>   -->

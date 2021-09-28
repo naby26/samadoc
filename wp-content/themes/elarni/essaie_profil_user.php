@@ -48,7 +48,6 @@ $image = $tab_image['photo'];
             font-size:large;
             background-color:rgb(10,107,49);
             width:100%;
-            padding:0.5em 1em;
             color:white;
             border:2px outset rgb(10,107,49);
         }
@@ -393,7 +392,7 @@ $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
             <div class="fichier">
 			<div class="image_du_fichier">
 			<a href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $tab['nom']; ?>" >
-				<img src="<?php echo $icone; ?>" alt="fichier PDF" class="icone_du_fichier" title="<?php echo $tab['nom'];?>" width="200px" height="auto">
+				<img src="<?php echo $icone; ?>" alt="fichier PDF" class="icone_du_fichier" title="<?php echo $tab['description'];?>" width="200px" height="auto">
 			</a>
 			</div>
 			<div class="info_du_fichier">
@@ -403,8 +402,8 @@ $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
 				<label class="info"> Niveau :  <span class="titre"><?php echo $tab['niveau'];  ?> </span> </label>
 				<label class="info"> Année :   <span class="titre"><?php echo $tab['annee'];   ?> </span> </label>
 			</div>
-			<div class="bouton_supp">
-				<a href="http://localhost/samadoc/disi_code/supprimer_doc.php?get_id=<?php echo $tab['id'];?>&auteur=<?php echo $tab['auteur'] ;?>" class="bouton_supprimer">Supprimer</a>
+			<div class="div_input">
+				<a href="" class="bouton_supprimer">Supprimer</a>
 			</div>
 
 	       </div>
