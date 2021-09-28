@@ -3,70 +3,7 @@
 Template name: Accueil
 */
 get_header();
-
-$username=$_SESSION['username'];
-$bdd = mysqli_connect("localhost", "root","", "samadoc");
-$reponse = mysqli_query($bdd,"SELECT * FROM sd_etudiant WHERE username='$username'");
-$tab_image = mysqli_fetch_array($reponse);
 ?>
-
-<style>
-
-    div#popup{
-
-		display:flex;
-		flex-wrap:wrap;
-        gap:2em;
-        background-color: rgb(240,240,240);
-        box-shadow: 0 0 10px gray;
-        padding:1em 2em;
-        border-radius:1em;
-        border-top: 2px solid rgb(10,107,49);
-        border-bottom:2px solid rgb(10,107,49);
-        border-right: 1em solid rgb(10,107,49);
-        border-left: 1em solid rgb(10,107,49);
-        animation: popup 8s ;
-        margin:0 30%;
-		justify-content: space-evenly;
-		z-index:900em;
-    }
-     img#image_profil_user{
-         width: 150px;
-         height:150px;
-         border-radius:50%;
-     }
-     div.droite , div.gauche{
-         display:flex;
-         flex-direction: column;
-         align-items: center;
-     }
-  label#nom{
-      font-size: x-large;
-      text-shadow:0 0 10px rgb(10,107,49);
-      color:white;
-      font-weight: bolder;
-  }
-  p#suite{
-    font-size:large;
-      color:black;
-      font-weight: bolder;
-  }
-  
-    @keyframes popup {
-        0%{
-            transform: translateY(-100%);
-        }
-        50%{
-            transform: translateY(100%); 
-        }
-        100%{
-                transform: translateY(-200%);
-        }
-
-    }
-</style>
-
-
 
 <?php        
 	$con = mysqli_connect("localhost","root","","samadoc");
@@ -111,7 +48,6 @@ $tab_image = mysqli_fetch_array($reponse);
 			border: 2px solid rgb(10,107,49);
 			gap: 0px 10px;
 			width:100%;
-			margin-top:-10em;
 		}
 		.stat_ufr{
 			padding: 3%;
@@ -206,6 +142,13 @@ $tab_image = mysqli_fetch_array($reponse);
 		.profil_info:hover{
 			display: inline-block;
 		}
+		.lien_1{
+			transition: 1s;
+		}
+		.lien_1:hover{
+			transform:scale(1.5);
+			transition: 1s;
+		}
 
 </style>
 
@@ -230,50 +173,27 @@ $tab_image = mysqli_fetch_array($reponse);
             </div>
         </header><!-- **Header - End ** -->
     </div>
-<?php 
 
-if( $_SESSION['val'] == 0){ ?>
-
-	<div id="popup">
-        <div class="gauche">
-            <img id="image_profil_user" src="http://localhost/samadoc/disi_code/sd_avatar_user/<?php echo $tab_image['photo']; ?>" alt="">
-        </div>
-        <div class="droite">
-            <h2 id="">BIENVENUE</h2>
-            <label id="nom"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname'] ;?></label>
-            <p id="suite"> dans SAMADOC</p>
-        </div>
-    </div>
-
-	<script>
-	setTimeout(function(){
-    var popup = document.getElementById('popup');
-    popup.style.visibility="hidden";
-	},6000);
-	
-	</script>
-	
- <?php unset( $_SESSION['val']); } ?>
 
     <div class="corps_accueil">
 
 			<section class="stat">
 				<div class="stat_ufr">
 					<p class="nom_ufr">UFR SEAPAN</p>
-					<p class="p_valeur"><span class='valeur'><?php echo $table2;?></span><img src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></p>
+					<p class="p_valeur"><span class='valeur'><?php echo $table2;?></span> <a  href="http://localhost/samadoc/ufr-saepan/"><img class="lien_1" src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></a></p>
 				</div>
 				<div class="stat_ufr">
 					<p class="nom_ufr">UFR SFI</p>
-					<p class="p_valeur"><span class='valeur'><?php echo $table1;?></span><img src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></p>
+					<p class="p_valeur"><span class='valeur'><?php echo $table1;?></span><a  href="http://localhost/samadoc/ufr-sfi/"><img class="lien_1" src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></a></p>
 				</div>
 			
 				<div class="stat_ufr">
 					<p class="nom_ufr">UFR SES</p>
-					<p class="p_valeur"><span class='valeur'><?php echo $table3;?></span><img src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></p>
+					<p class="p_valeur"><span class='valeur'><?php echo $table3;?></span><a  href="http://localhost/samadoc/ufr-sse/"><img class="lien_1" src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></a></p>
 				</div>
 				<div class="stat_ufr">
 					<p class="nom_ufr">UFR SJET  </p>
-					<p class="p_valeur"><span class='valeur'><?php echo $table4;?></span><img src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></p>
+					<p class="p_valeur"><span class='valeur'><?php echo $table4;?></span><a  href="http://localhost/samadoc/ufr-sjet/"><img class="lien_1" src="http://localhost/samadoc/wp-content/uploads/2021/08/doc.png" alt="DOCUMENT" width="150px" height="150px"></a></p>
 				</div>
 			</section>
 	
