@@ -6,25 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<?php wp_head(); ?>
 </head>
-<?php
-$type = cs_get_option( 'notfound-style' );
-$darkbg = cs_get_option( 'notfound-darkbg' );
-$type .= !empty( $darkbg ) ? ' dt-sc-dark-bg' : '';
 
-$bgoptions = cs_get_option('notfound_background');
-
-$bg 		= !empty( $bgoptions['image'] ) ? $bgoptions['image'] : '';
-$attach 	= !empty( $bgoptions['attachment'] ) ? $bgoptions['attachment'] :'scroll';
-$position 	= !empty( $bgoptions['position'] ) ? $bgoptions['position'] :'center center';
-$size   	= !empty( $bgoptions['size'] ) ? $bgoptions['size'] :'auto';
-$repeat		= !empty( $bgoptions['repeat'] ) ? $bgoptions['repeat'] :'no-repeat';
-$color 		= !empty( $bgoptions['color'] ) ? $bgoptions['color'] : '#ffffff';
-
-$estyle = cs_get_option( 'notfound-bg-style' );
-
-$style  = !empty($bg) ? "background:url($bg) $position / $size $repeat $attach;" : '';
-$style .= " background-color:$color;";
-$style .= !empty($estyle) ? $estyle : ''; ?>
+<style>
+    .error404{
+        background-image: url(http://localhost/samadoc/disi_code/ussein);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 
 <body <?php body_class(); ?>>
 
@@ -38,11 +27,11 @@ $style .= !empty($estyle) ? $estyle : ''; ?>
 					$content = do_shortcode( stripslashes( $page['post_content'] ) );
 					echo elearni_wp_kses( $content );
                 elseif( cs_get_option( 'enable-404message' ) ):
-					echo '<div class="error-box square"><div class="error-box-inner"><h3>'.esc_html__('Oops!', 'elearni').'</h3><h2>404</h2><h4>'.esc_html__('Page Not Found', 'elearni').'</h4></div></div>';
+					echo '<div class="error-box square"><div class="error-box-inner"><h3>'.esc_html__('Oops!', 'elearni').'</h3><h2></h2><h4>'.esc_html__('Page Introuvable', 'elearni').'</h4></div></div>';
 					echo '<div class="dt-sc-hr-invisible-xsmall"></div>';
-					echo '<p>'.esc_html__("It seems you've ventured too far.", "elearni").'</p>';
+					echo '<p>'.esc_html__(".", "elearni").'</p>';
 					echo '<div class="dt-sc-hr-invisible-xsmall"></div>';
-                    echo '<a class="dt-sc-button filled small" target="_blank" href="'.esc_url(home_url('/')).'">'.esc_html__('Back to Home','elearni').'</a>';
+                    echo '<a class="dt-sc-button filled small" target="_blank" href="'.esc_url(home_url('/')).'">'.esc_html__('Accueil','elearni').'</a>';
                 endif; ?>
             </div>
         </div>
@@ -51,3 +40,18 @@ $style .= !empty($estyle) ? $estyle : ''; ?>
 <?php wp_footer(); ?>
 </body>
 </html>
+<style>
+    .dt-sc-button{
+        width:50%;
+        border-radius: 25px;
+        font-size: 50px;
+        
+    }
+    .dt-sc-button:hover{
+        background: rgb(10, 107, 49);
+           transform:scale(1.4);
+            color: white;
+            transition: 1s;
+			background:rgb(141, 54, 20)
+    }
+</style>
