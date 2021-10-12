@@ -255,10 +255,14 @@ a.active:active{
                   <div class="lien_departement">
                   <?php
                     while ($tab_dept=mysqli_fetch_array( $liste_depte)) {
-                        ?>
+                        if($tab_dept['ufr_sigle']!=''){
+                            ?>
                             
                             <a class="lien_dept" href='http://localhost/samadoc/ufr-<?php echo $tab_dept['ufr_sigle']; ?>' title="<?php echo $tab_dept['ufr']; ?>"> UFR <?php echo $tab_dept['ufr_sigle']; ?> </a> <br> <?php
-                            
+                          
+
+                        }
+                         
                         }?>
                   </div>
                

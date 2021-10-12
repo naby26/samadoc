@@ -224,9 +224,11 @@ a.active:hover{
              $tab_structure=mysqli_fetch_array($information);
             $licence=$tab_structure['licence_sigle'];
             $liste_depte=  mysqli_query($con,"SELECT DISTINCT ufr_sigle, departement_sigle, licence_sigle, licence FROM sd_structure WHERE licence_sigle='$licence' ");
+            $tab_dept=mysqli_fetch_array($liste_depte);
             
            ?>
             <div class="bloc_ufr">
+                
                 <a href="http://localhost/samadoc/ufr-<?php echo $tab_dept['ufr_sigle']; ?>"><label class="ufr_actuel" > <?php echo $tab_structure['ufr']; ?></label></a>
                     <a href="http://localhost/samadoc/dept-<?php echo $tab_dept['departement_sigle']; ?>"><label class="ufr_actuel" > <?php echo $tab_structure['departement']; ?></label></a>
                  
