@@ -1,117 +1,21 @@
+
 <style>
-/* .page-id-58{
-        margin:0%;
-    } */
-
-
-.dt-no-header-builder-content{
-    display: flex;
-    /* align-items:center; */
-    justify-content: center;
-}
-div.recherche{
-    width: 50%;
-    padding: 0;
-}
-div.doc{
-          display: flex;
-          /* flex-direction: column; */
-          gap: 0 1em;
-          justify-content: center;
-      }
-.rdp{
-    margin-right: 0;
+    #logo_ussein{
     width: 100%;
-    display:flex;
-    float:right;
-    /* position: relative;
-    right: 0; */
-    /* bottom:-0.6rem; */
-    font-size:large;
-    gap: 2em;
-    
-}
-
-.search-module{
-    width:100%;
-}
-
-    .ul1{
-        float: right;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    padding:0px;    
     }
-    .ul1 li{
-        display:inline-block;
+    #logo_ussein img{
+        padding: 0px;
     }
-    .ul1 li img {
-        width:50px;height:auto;
-        border-radius: 50%;
-    }
- 
-     img.image{
-        width:150px;
-        height:100px;
-    } 
-    .connexion_profil{
-         /* width: 100%;
-         display: flex;  */
-         
-      }
-      #toto{
-     width: 100%;
-      }
-      div.profil {
-          width: 100%;
-          float: right;
-          /* margin-right: 0; */
-      }
-      div.profil a img{
-          width: 15vh;
-      }
-#logo_ussein{
-    width: 100%;
-}
-
-  @media(max-width:800px){
-      div.doc{
-          display: flex;
-          flex-direction: column;
-          gap: 1em 0;
-      }
-    
-
-  }
-
-    @media(max-width:700px){
-      .dt-no-header-builder-content, .dt-no-header-elearni {
-          display: flex;
-          flex-direction: column;
-          }
-          .connexion_profil{
-        display: flex;
-      }
-      
-    }
-
 
 </style>
+<div class="dt-no-header-builder-content dt-no-header-elearni ">
 
+    <!-- <div class="no-header-top"> -->
+        <!-- <span><?php echo get_bloginfo( 'description', 'display' ); ?></span> -->
+    <!-- </div> -->
 
-
-
-<div class="dt-no-header-builder-content dt-no-header-elearni">
-
-
-
-    <div class="no-header-top">
-        <span><?php //echo get_bloginfo( 'description', 'display' ); ?></span>
-    </div>
-
-            
-
-    <!-- <div class="no-header">  -->
+    <div class="no-header">
         <div class="no-header-logo-wrapper">
             <div class="dt-logo-container logo-align-left">
                 <?php
@@ -133,11 +37,12 @@ div.doc{
                 } else { ?>
                     <a id="logo_ussein" rel="home">
                          <img class="image" src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO-e1632675134890.png" <?php //echo ELEARNI_THEME_URI.'/images/logo.png'; ?>    alt="Logo USSEIN" title="Universite du Sine Saloum"/>  
-                    </a><?php
+                    </a>
+                    <?php
                 } ?>
             </div>    
         </div> 
-        <!-- href="<?php echo esc_url( home_url('/') ); ?>" -->
+
         <div class="no-header-menu dt-header-menu" data-menu="dummy-menu">
             <?php
                 $args = array(
@@ -159,10 +64,6 @@ div.doc{
             ?>
         </div>
 
-
-
-
-
         <!-- Mobile Menu -->
         <div class="mobile-nav-container mobile-nav-offcanvas-right" data-menu="dummy-menu">
             <div class="menu-trigger menu-trigger-icon" data-menu="dummy-menu"><i></i><span><?php esc_html_e('Menu', 'elearni'); ?></span></div>
@@ -170,47 +71,13 @@ div.doc{
             <div class="overlay"></div>
         </div>
         <!-- Mobile Menu -->
-      <!-- <div class="doc"> -->
-        
 
-            
+        <div class="alignright search-module simple-header-search">
+            <?php get_search_form( true ); ?>
+        </div>
 
-       
-    <!-- </div> -->
-<!-- </div> -->
- <!-- <div class="rdp"> -->
-     
-     <!-- <div class="connexion_profil"> -->
-         <!-- <div id="toto"> -->
-          <div class="rdp">
-          <a href="http://localhost/samadoc/disi_code/deconnexion.php">Déconnexion</a>
-         </div>
- 
-      <div class="profil rdp">
-      <?php 
-      if($_SESSION['status']==0){
-      ?>
-      <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " /></a>
-      <?php }
-      else { ?>
-       <a href="http://localhost/samadoc/profil-administrateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" "/></a>
-      <?php } ?>
-      </div>
-    <!-- </div> -->
-  <!-- </div>      -->
-<!-- </div> -->
-<!-- <div class="alignright search-module simple-header-search input_recherche"> -->
-    <div class="recherche">
-                         <?php 
-                         if(!is_page('accueil')){
-                           get_search_form( true );  
-                         }   ?>  
-
-                    </div>
-                  <!-- </div> -->
-     </div>
-     
-     
-     <!-- <ul class="ul1">
-         <li id="li1"> <a href="http://localhost/samadoc/profil-utilisateur/"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" title="Mon profil" alt=" " width="50px"/></a></li>
-        </ul>   -->
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
