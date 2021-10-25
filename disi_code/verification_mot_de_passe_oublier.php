@@ -35,8 +35,8 @@ if(isset($_POST['envoyer_o'])){
 
         </div>';
 
-        $header = "From:\"nash\"<caambdiop.officiel@gmail.com>\n";
-        $header .="Reply-To:caambdiop.officiel@gmail.com\n";
+        $header = "From:\"nash\"<bass618@gmail.com>\n";
+        $header .="Reply-To:bass618@gmail.com\n";
         $header .="Content-Type:text/html; charset=\"iso-8859-1\"";
 
 

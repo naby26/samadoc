@@ -207,7 +207,7 @@ mysqli_close($con);
 
 
         <div class="row shadow  mx-2 my-1  text-center stat">
-            <div class="col-12 font-weight-bold stats  mt-1 mx-2"> <h3> STATISTICS</h3> 
+            <div class="col-12 font-weight-bold stats  mt-1 mx-2"> <h3> STATISTIQUES</h3> 
 			</div>
             <div class="col-md-6 col-lg-3 col-sm-12 my-1 " >
                 <div class="card">

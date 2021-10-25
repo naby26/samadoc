@@ -10,6 +10,7 @@
         <footer id="footer">
         <style>
         .footer{
+        
             position: absolute;
             width: 100%;
             background-color: #01796F;            
@@ -19,6 +20,11 @@
             grid-template-rows: auto auto;
             margin-top: 2%;
             box-shadow: -0px -10px 30px rgba(0,0,0,0.1);
+        }
+        .description_des_liens{
+            font-weight: bold;
+            position:relative;
+            margin-right: -50px;
         }
         .logo_footer{
             display:grid;
@@ -32,8 +38,12 @@
             margin-left: 50px;
             justify-self: center;
         }
+        .lien_utile{
+            margin-right: 50%;
+        }
         .lien_footer{
             margin-left:2%;
+            
         }
         .footer hr{
             width: 100%;
@@ -57,10 +67,12 @@
             display: inline-flex;
             flex-direction: column;
             float: inline-end;
+            margin:0  50px;
         }
         img#image{
-            width:300px;
+            width:150px;
             height:150px;
+            
         }
     </style>
     <div class="footer">
@@ -69,10 +81,10 @@
             <a href="https://www.ussein.sn" target="_blank"><img id="image" src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO.png" alt="Logo Ussein" class="img_logo" ></a>
             </div>
             <div class="lien_footer">
-            <h1>Liens Utiles</h1>
-            <a href="https://www.ussein.sn" target="_blank">Université Sine-Saloum El-hadji Ibrahima Niass</a>
-            <a href="https://ussein.uvs.sn" target="_blank">Plateforme de cours en Ligne USSEIN</a>     
-        </div>
+            <h1 class="lien_utile">Liens Utiles</h1>
+            <a href="https://www.ussein.sn" class="description_des_liens" target="_blank">Université Sine-Saloum El-hadji Ibrahima Niass</a>
+            <a href="https://ussein.uvs.sn" class="description_des_liens" target="_blank">Plateforme de cours en Ligne USSEIN</a>     
+            </div>
             
         </div>
         <hr>
