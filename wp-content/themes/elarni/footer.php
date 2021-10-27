@@ -5,103 +5,43 @@
          */
         do_action( 'elearni_hook_content_after' );
     ?>
+    <style>
+        .footer {
+            bottom:0;
+            /* height: 100px; */
+            background-color:black;
+            color:white;
+        }
+        .lien_util{
+            color:white;
+        }
+
+
+    </style>
 
         <!-- **Footer** -->
-        <footer id="footer">
-        <style>
-        .footer{
-        
-            position: absolute;
-            width: 100%;
-            background-color: #01796F;            
-            color: white;
-            font-weight: normal;
-            display: grid;
-            grid-template-rows: auto auto;
-            margin-top: 2%;
-            box-shadow: -0px -10px 30px rgba(0,0,0,0.1);
-        }
-        .description_des_liens{
-            font-weight: bold;
-            position:relative;
-            margin-right: -50px;
-        }
-        .logo_footer{
-            display:grid;
-            grid-template-columns: 1fr 1fr;
-            justify-content: space-around;
-        }
-        .logo_footer img{
-            border-radius: 0%;
-            padding-top: 3%;
-            transform: scale(1.2);
-            margin-left: 50px;
-            justify-self: center;
-        }
-        .lien_utile{
-            margin-right: 50%;
-        }
-        .lien_footer{
-            margin-left:2%;
+        <footer id="footer " class="footer ">
+            <div class=" ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-8 m-0 p-0">
+                            <img src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO.png" width="120" height="90" class="img ml-4" alt="...">
+                        </div>
+                        <div class="col  p-0 m-0">
+                                <h5 class="lien_util">Liens utils</h5>
+                                <ul class="list-unstyled lien_util p-0 m-0 ">
+                                    <li class="list-item p-0 m-0"><a href="https://www.ussein.sn" target="_blank">&middot; Université Sine-Saloum El-hadji Ibrahima Niass</a></li>
+                                    <!-- <li class="list-inline-item">&middot;</li> -->
+                                    <li class="list-item  p-0 m-0"><a href="https://ussein.uvs.sn" target="_blank">&middot; Plateforme de cours en Ligne USSEIN</a></li>
+                                </ul>
+                        </div>
+                </div> 
+                <div class="row justify-content-center p-0 m-0">
+                    <p class='text-center border-top '>&copy; 2021 DISI, Université du Sine Saloum El-Hadj Ibrahima NIASS - Tous droits réservées</p>
+                </div>
+                </div>
+               
             
-        }
-        .footer hr{
-            width: 100%;
-        }
-        .lien_footer  h1{
-            text-align: center;
-        }
-        .lien_footer a{
-            display: flex;
-            text-decoration: none;
-            color: white;
-            margin: 1%;
-        }
-        .propos_footer{
-            text-align: center;
-        }
-        .dt-no-footer-builder-content span, .footer-copyright span{
-            display: none;
-        }
-        .lien_footer{
-            display: inline-flex;
-            flex-direction: column;
-            float: inline-end;
-            margin:0  50px;
-        }
-        img#image{
-            width:150px;
-            height:150px;
-            
-        }
-    </style>
-    <div class="footer">
-        <div class="logo_footer">
-            <div class="img">
-            <a href="https://www.ussein.sn" target="_blank"><img id="image" src="http://localhost/samadoc/wp-content/uploads/2021/09/USSEIN-LOGO.png" alt="Logo Ussein" class="img_logo" ></a>
-            </div>
-            <div class="lien_footer">
-            <h1 class="lien_utile">Liens Utiles</h1>
-            <a href="https://www.ussein.sn" class="description_des_liens" target="_blank">Université Sine-Saloum El-hadji Ibrahima Niass</a>
-            <a href="https://ussein.uvs.sn" class="description_des_liens" target="_blank">Plateforme de cours en Ligne USSEIN</a>     
-            </div>
-            
-        </div>
-        <hr>
-        <div class="propos_footer">
-            &copy; 2021 DISI, Université du Sine Saloum El-Hadj Ibrahima NIASS - Tous droits réservées
-        </div>
-    </div>
-            <div class="container">
-            <?php
-                /**
-                 * elearni_footer hook.
-                 * 
-                 * @hooked elearni_vc_footer_template - 10
-                 *
-                 */
-                do_action( 'elearni_footer' );
-            ?>
             </div>
         </footer><!-- **Footer - End** -->
 

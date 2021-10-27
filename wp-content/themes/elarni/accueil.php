@@ -129,7 +129,18 @@ $table3 = mysqli_num_rows($requete3);
 $table4 = mysqli_num_rows($requete4);
 
 mysqli_close($con);
+
+
+           
+
+$con = mysqli_connect("localhost","root","","samadoc");
+$information = mysqli_query($con,"SELECT * FROM sd_structure  ");
+$tab_structure=mysqli_fetch_array($information);
+$ufr=$tab_structure['ufr_sigle'];
+$liste_depte=  mysqli_query($con,"SELECT DISTINCT ufr_sigle,ufr FROM sd_structure");
+
 ?>
+
 
 
 <body>
@@ -179,7 +190,7 @@ mysqli_close($con);
 		 
 
             
-        <div class="row mx-2 p-0 my-1" >
+        <div class="row shadow mx-2 p-0 my-1 "  >
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -195,7 +206,7 @@ mysqli_close($con);
             </div>
         </div>
         
-        <div class="row mx-2 my-1 border-2 presentation  text-justify font-italic  px-2">
+        <div class="row mx-2 my-1 border-2 presentation  text-justify font-italic shadow px-2">
             <p>
                 Vue les difficultés qu'affrontent les étudiants pour accéder à des documents et pire pour les nouveaux étudiants qui ont du mal à 
                 avoir un apercu sur le travail qui les attendent, nous avons mis en place SAMADOC.
@@ -227,7 +238,7 @@ mysqli_close($con);
                         <p class="card-text">Départements</p>
                         <p class="card-text">Licences</p>
                         <p class="card-text"><?php echo $table2;?> Documents</p>
-                        <a href="#" class="btn btn-primary">voir documents</a>
+                        <a href="http://localhost/samadoc/ufr-SAEPAN" class="btn btn-primary">voir documents</a>
                     </div>
                 </div>
 
@@ -250,8 +261,8 @@ mysqli_close($con);
                         <h5 class="card-title text-center mt-0">UFR SEJP</h5>
                         <p class="card-text">Départements</p>
                         <p class="card-text">Licences</p>
-                        <p class="card-text"><?php echo $table2;?> Documents</p>
-                        <a href="#" class="btn btn-primary">voir documents</a>
+                        <p class="card-text"><?php echo $table4;?> Documents</p>
+                        <a href="http://localhost/samadoc/ufr-SEJP" class="btn btn-primary">voir documents</a>
                     </div>
                 </div>
 
@@ -273,8 +284,8 @@ mysqli_close($con);
                         <h5 class="card-title text-center mt-0">UFR SSE</h5>
                         <p class="card-text">Départements</p>
                         <p class="card-text">Licences</p>
-                        <p class="card-text"><?php echo $table2;?> Documents</p>
-                        <a href="#" class="btn btn-primary">voir documents</a>
+                        <p class="card-text"><?php echo $table3;?> Documents</p>
+                        <a href="http://localhost/samadoc/ufr-sse" class="btn btn-primary">voir documents</a>
                     </div>
                 </div>
 
@@ -296,8 +307,8 @@ mysqli_close($con);
                         <h5 class="card-title text-center mt-0">UFR SFI</h5>
                         <p class="card-text">Départements</p>
                         <p class="card-text">Licences</p>
-                        <p class="card-text"><?php echo $table2;?> Documents</p>
-                        <a href="#" class="btn btn-primary">voir documents</a>
+                        <p class="card-text"><?php echo $table1;?> Documents</p>
+                        <a href="http://localhost/samadoc/ufr-sfi" class="btn btn-primary">voir documents</a>
                     </div>
                 </div>
 

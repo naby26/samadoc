@@ -262,36 +262,36 @@ get_header();
                     $tab_ppt = array('.ppt','.pptx','.PPT','.PPTX');
                     $icone="";
                     if($nbr_doc !==0){
-                    while($table = mysqli_fetch_array($rs_result )){
+                        while($table = mysqli_fetch_array($rs_result )){
 
-                        $format = strrchr($table['nom'],'.');
-                        if(in_array($format,$tab_pdf)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/pdf.png";
-                        }
-                        if(in_array($format,$tab_word)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/doc.png";
-                        }
-                        if(in_array($format,$tab_excel)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/xls.png";
-                        }
-                        if(in_array($format,$tab_ppt)){
-                            $icone = "http://localhost/samadoc/wp-content/uploads/2021/08/ppt.png";
-                        }
-                        ?>
-                        
-                        <div class="div_doc">
-                                <div class="div_img">
-                                <a href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" >
-                                    <img src="<?php echo $icone; ?>" alt="fichier PDF" class="image_bloc" title="<?php echo $table['description'];?>" width="200px" height="auto" id="img_doc">
-                                </a>
-                                </div>
-                                <div class="div_label">
-                                    <label >UFR: </label> <?php echo $table['ufr'];?><br>
-                                    <label >Nature: </label> <?php echo $table['nature'];?><br>
-                                    <label >Module: </label> <?php echo $table['module'];?><br>
-                                    <label >Niveau: </label> <?php echo $table['niveau'];?><br>
-                                    <label >Année: </label> <?php echo $table['annee'];?><br>
-                                </div>
+                            $format = strrchr($table['nom'],'.');
+                            if(in_array($format,$tab_pdf)){
+                                $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/file_type_pdf_icon_1302741.png";
+                            }
+                            if(in_array($format,$tab_word)){
+                                $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/2048px-.docx_icon.svg1_.png";
+                            }
+                            if(in_array($format,$tab_excel)){
+                                $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/519281.png";
+                            }
+                            if(in_array($format,$tab_ppt)){
+                                $icone = "http://localhost/samadoc/wp-content/uploads/2021/09/1200px-.pptx_icon_2019.svg1_.png";
+                            }
+                            ?>
+                            
+                            <div class="div_doc">
+                                    <div class="div_img">
+                                    <a href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" >
+                                        <img src="<?php echo $icone; ?>" alt="fichier PDF" class="image_bloc" title="<?php echo $table['description'];?>" width="200px" height="auto" id="img_doc">
+                                    </a>
+                                    </div>
+                                    <div class="div_label">
+                                        <label >Licence: </label> <?php echo $table['licence'];?><br>
+                                        <label >Nature: </label> <?php echo $table['nature'];?><br>
+                                        <label >Module: </label> <?php echo $table['module'];?><br>
+                                        <label >Niveau: </label> <?php echo $table['niveau'];?><br>
+                                        <label >Année: </label> <?php echo $table['annee'];?><br>
+                                    </div>
                                 <div class="div_input">
                                     <a download="<?php echo $table['nom']; ?>" href="http://localhost/samadoc/disi_code/sd_repertoire/<?php echo $table['nom']; ?>" ><input type="submit" value="Télécharger" class="telecharger"></a>
                                 </div>
